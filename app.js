@@ -12,9 +12,21 @@ $(document).ready(function(){
 // ================================
 
 	function playExplosion() {
-		$('#explosionSound')[0].volume = 0.5;
+		$('#explosionSound')[0].volume = 0.9;
 		$('#explosionSound')[0].load();
 		$('#explosionSound')[0].play();
+	}
+
+	function playLightning() {
+		$('#lightningSound')[0].volume = 1;
+		$('#lightningSound')[0].load();
+		$('#lightningSound')[0].play();
+	}
+
+	function playBaliRain() {
+		$('#baliRain')[0].volume = 0.2;
+		$('#baliRain')[0].load();
+		$('#baliRain')[0].play();
 	}
 
 	function blink() {
@@ -51,7 +63,14 @@ $(document).ready(function(){
 		introNumber.fadeIn();
 		setTimeout(function() {
 			introNumber.addClass('blowUp');
-			playExplosion();
+			playLightning();
+			$('#baliRain').animate({'volume': 0}, 1000);
+			setTimeout(function(){
+				$('#baliRain').animate({'volume': 0.1}, 2000);
+			}, 7000);
+			setTimeout(function(){
+				$('#baliRain').animate({'volume': 0}, 2000);
+			}, 20000);
 		}, 2000);
 		setTimeout(function() {
 			introNumber.hide();
@@ -73,6 +92,7 @@ $(document).ready(function(){
 			setTimeout(function() {
 				$('#introFades span:last-child').addClass('blowUp');
 				playExplosion();
+				$('#baliRain')[0].animate({'volume': 0.1}, 1000);
 				// blink();		
 			}, 2000);
 			setTimeout(function() {
@@ -91,6 +111,9 @@ $(document).ready(function(){
 			setTimeout(function() {
 				$('#welcome span').fadeIn(5000).delay(1000).fadeOut(5000);
 			}, 2300);
+			setTimeout(function() {
+
+			});
 		}
 	}//end introRoll
 	
@@ -98,6 +121,7 @@ $(document).ready(function(){
 // function calls
 // ================================
 	$('#blackout').fadeOut(1000); 
+	playBaliRain();
 	introRoll();
 	
 }); //end on ready
