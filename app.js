@@ -12,7 +12,7 @@ $(document).ready(function(){
 // ================================
 
 	function playExplosion() {
-		$('#explosionSound')[0].volume = 0.9;
+		$('#explosionSound')[0].volume = 1;
 		$('#explosionSound')[0].load();
 		$('#explosionSound')[0].play();
 	}
@@ -30,77 +30,66 @@ $(document).ready(function(){
 	}
 
 	function blink() {
-		$("#blackout").fadeIn(1000);
-		setTimeout(function() {
-			$("#blackout").fadeOut(1000);
-		}, 1000);
+		$("#blackout").fadeIn(1000).fadeOut(1000);
+	}
+
+	function blowUp(elem) {
+		elem.addClass('blowUp');
+		playExplosion();
 	}
 
 	function introFade(num) {
 		var introNumber = $('#introFades span:nth-child('+num+')');
-		introNumber.fadeIn(2000);	
-		setTimeout(function() {
-			introNumber.fadeOut(2000);
-		}, 2000);
+		introNumber.fadeIn(2000).fadeOut(2000);	
 		introFadeCounter++;
 	} 
 
 	function introExplode(num) {
 		var introNumber = $('#introExplode span:nth-child('+num+')');
-		introNumber.fadeIn();
-		setTimeout(function() {
-			introNumber.addClass('blowUp');
-			playExplosion();
-		}, 1000);
-		setTimeout(function() {
-			introNumber.hide();
-		}, 1200);
+		introNumber.fadeIn().delay(1200).hide(0);
 		introExplodeCounter++;
+		setTimeout(function() {
+			blowUp(introNumber);
+		}, 1000);
 	}
 
 	function introExplodeLast(num) {
 		var introNumber = $('#introExplode span:nth-child('+num+')');
-		introNumber.fadeIn();
+		introNumber.fadeIn().delay(2200).hide(0);
+		introExplodeCounter++;
 		setTimeout(function() {
 			introNumber.addClass('blowUp');
 			playLightning();
-			$('#baliRain').animate({'volume': 0}, 1000);
-			setTimeout(function(){
-				$('#baliRain').animate({'volume': 0.1}, 2000);
-			}, 7000);
-			setTimeout(function(){
-				$('#baliRain').animate({'volume': 0}, 2000);
-			}, 20000);
 		}, 2000);
-		setTimeout(function() {
-			introNumber.hide();
-		}, 2200);
-		introExplodeCounter++;
+		// setTimeout(function() {
+		// 	$('#welcome span').fadeIn(5000).delay(1000).fadeOut(5000);
+		// }, 2300);
+		setTimeout(function(){
+			$('#welcome span').fadeIn(5000).delay(1000).fadeOut(5000);
+			$('#baliRain').animate({'volume': 0.5}, 5000).delay(1000).animate({'volume': 0}, 5000);
+		}, 9000);
 	}
 
 	function introRoll() {
 		if (introFadeCounter < $('#introFades span').length) {
 			introFade(introFadeCounter);	
 			setTimeout(function() {
-				introRoll();
-			}, 4000);
-			setTimeout(function() {
 				blink();
 			}, 3000);
+			setTimeout(function() {
+				introRoll();
+			}, 4000);
 		} else if (introFadeCounter === $('#introFades span').length) {
 			introFade(introFadeCounter);
 			setTimeout(function() {
 				$('#introFades span:last-child').addClass('blowUp');
+				$('#baliRain').animate({'volume': 0}, 1000);
 				playExplosion();
-				$('#baliRain')[0].animate({'volume': 0.1}, 1000);
-				// blink();		
+				blink();
 			}, 2000);
 			setTimeout(function() {
 				introRoll();		
-			}, 4000);
-			setTimeout(function() {
-				blink();		
-			}, 1800);
+			}, 3000);
 		} else if (introExplodeCounter < $('#introExplode span').length) {
 			introExplode(introExplodeCounter);	
 			setTimeout(function() {
@@ -108,12 +97,6 @@ $(document).ready(function(){
 			}, 1200);
 		} else if (introExplodeCounter === $('#introExplode span').length) {
 			introExplodeLast(introExplodeCounter);
-			setTimeout(function() {
-				$('#welcome span').fadeIn(5000).delay(1000).fadeOut(5000);
-			}, 2300);
-			setTimeout(function() {
-
-			});
 		}
 	}//end introRoll
 	
