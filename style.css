@@ -1,10 +1,11 @@
 * {
-	outline: 1px dotted red;
+	/*outline: 1px dotted red;*/
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
-	box-sizing: border-box;				
+	box-sizing: border-box;
+	overflow: hidden;				
 }
 
 body {
@@ -78,7 +79,6 @@ section {
 }
 
 section span {
-	display: block;
 	text-align: center;
 	font-size: 4em;
 	position: absolute;
@@ -88,16 +88,16 @@ section span {
 }
 
 .blowUp {
+	-webkit-transition-duration: 2s;
+	-moz-transition-duration: 2s;
+	-ms-transition-duration: 2s;
+	-o-transition-duration: 2s;
+	transition-duration: 2s;
 	-webkit-transform: scale(10000);
 	-moz-transform: scale(10000);
 	-ms-transform: scale(10000);
 	-o-transform: scale(10000);
 	transform: scale(10000);
-	-webkit-transition-duration: 3s;
-	-moz-transition-duration: 3s;
-	-ms-transition-duration: 3s;
-	-o-transition-duration: 3s;
-	transition-duration: 3s;
 	-webkit-transition-timing-function: linear;
 	-moz-transition-timing-function: linear;
 	-ms-transition-timing-function: linear;
