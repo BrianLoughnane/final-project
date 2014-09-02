@@ -5,7 +5,7 @@
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
-	overflow: hidden;				
+	overflow: hidden;		
 }
 
 body {
@@ -15,6 +15,10 @@ body {
 
 span {
 	display: inline-block;
+}
+
+p, blockquote {
+	white-space: pre-wrap;
 }
 
 a, a:visited {
@@ -28,7 +32,6 @@ a, a:visited {
 a:hover {
 	font-weight: bold;
 }
-
 
 
 /*========================
@@ -138,17 +141,22 @@ Intro
 	transition-timing-function: linear;
 }
 
-section {
+#main-content {
+	margin-top: 8%;
 	display: none;
+}
+
+.about {
+	/*display: none;*/
 	padding: 3% 12%;
 	font-size: 2em;
 }
 
-section:nth-child(2) {
+/*section:first-child {
 	margin-top: 8%;
-}
+}*/
 
-section aside {
+.about aside {
 	font-size: 1.5em;
 }
 

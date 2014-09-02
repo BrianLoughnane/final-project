@@ -73,16 +73,20 @@ $(document).ready(function(){
 	function setup() {
 		setTimeout(function() {
 			$('header').slideDown();
-			$('section').slideDown();
+			$('#main-content').load('about.html');
 		}, 1000);
 
 		setTimeout(function() {
+			$('#main-content').slideDown();
+		}, 1500);
+
+		setTimeout(function() {
 			$('*').css('overflow', 'auto');
-		}, 1200);
+		}, 1700);
 		
 	}	
 
-	function introRoll() {
+	function fadeSequence() {
 		if (introFadeCounter < $('#introFades span').length) {
 			introFade(introFadeCounter);	
 			setTimeout(function() {
@@ -102,35 +106,31 @@ $(document).ready(function(){
 			setTimeout(function() {
 				introRoll();		
 			}, 3000);
-		} else if (introExplodeCounter < $('#introExplode span').length) {
+		}
+
+		condition = true;
+	}
+
+	function explodeSequence() {
+		if (introExplodeCounter < $('#introExplode span').length) {
 			introExplode(introExplodeCounter);	
 			setTimeout(function() {
 				introRoll();
 			}, 1200);
 		} else if (introExplodeCounter === $('#introExplode span').length) {
 			introExplodeLast(introExplodeCounter);
-			setTimeout(function() {
-				introRoll();
-			}, 16000);
-		} else {
-			$('.intro').hide();
-			setup();
 		}
-	}//end introRoll
-	
-// ================================
-// Intro
-// ================================
-	$('#blackout').fadeOut(1000); 
-	playBaliRain();
-	introRoll();
+	}
 
+	function introRoll() {
+		var condition = false;
+		fadeSequence();
+		if(condition) {
+			explodeSequence();
+		}
+	}
 
-}); //end on ready
-
-
-
-// function fadeSequence() {
+	// function introRoll() {
 	// 	if (introFadeCounter < $('#introFades span').length) {
 	// 		introFade(introFadeCounter);	
 	// 		setTimeout(function() {
@@ -150,16 +150,53 @@ $(document).ready(function(){
 	// 		setTimeout(function() {
 	// 			introRoll();		
 	// 		}, 3000);
-	// 	}
-	// }
-
-	// function explodeSequence() {
-	// 	if (introExplodeCounter < $('#introExplode span').length) {
+	// 	} else if (introExplodeCounter < $('#introExplode span').length) {
 	// 		introExplode(introExplodeCounter);	
 	// 		setTimeout(function() {
 	// 			introRoll();
 	// 		}, 1200);
 	// 	} else if (introExplodeCounter === $('#introExplode span').length) {
 	// 		introExplodeLast(introExplodeCounter);
+	// 		setTimeout(function() {
+	// 			introRoll();
+	// 		}, 16000);
+	// 	} else {
+	// 		$('.intro').hide();
+	// 		setup();
 	// 	}
-	// }
+	// }//end introRoll
+	
+// ================================
+// Intro
+// ================================
+	$('#blackout').fadeOut(1000); 
+	playBaliRain();
+	introRoll();
+
+	$('#resume-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('resume2.html');
+		}, 400);
+		
+	});
+
+	$('#home-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('about.html');
+		}, 400);
+		
+	});
+
+
+}); //end on ready
+
+
+
