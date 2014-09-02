@@ -1,0 +1,372 @@
+/*
+Style sheet for Brian Loughnane's resume
+Written by Brian Loughnane, 2014
+*/
+
+/*
+================
+Grid
+================
+*/
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+/*
+================
+Style
+================
+*/
+
+body {
+	font-family: Garamond;
+	color: #2d4d60;
+	background: white;
+}
+
+#resume-header {
+	background: white;
+}
+
+h1 {
+	margin-bottom: 2px;
+}
+
+h2 {
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+h3, h4, h5 {
+	margin: 0px;
+	text-align: center;
+}
+
+h4, h5 {
+	font-weight: lighter;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: inherit;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+p {
+	margin: 0px;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+article {
+	width: 730px;
+	margin: 0 auto;
+	font-size: 24px;
+}
+
+section, article div {
+	padding: 10px 0px;
+	overflow: hidden;
+}
+
+/*========================
+Header
+========================*/
+
+header span {
+	display: inline-block;
+}
+
+header a, header a:visited {
+	font-weight: 100;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header a:hover {
+	font-weight: bold;
+}
+
+header {
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: darkslategray;
+	padding: 3% 5%;
+	border-bottom: 1px solid darkslategray;
+	position: fixed;
+	width: 100%;
+	display: none;
+	background: white;
+	z-index: 1;
+}
+
+header span {
+	display: inline-block;
+	font-size: 2em;
+	font-weight: 300;
+	margin-top: 0.4em;
+}
+
+header nav {
+	display: inline-block;
+	float: right;
+	vertical-align: top;
+	margin-top: 7px;
+}
+
+header nav a {
+	margin-right: 3em;
+	font-size: 1.4em;
+	/*padding: 0px 5.7px;*/
+	/*padding: 0% 1.1%;*/
+	padding: 0em 0.25em;
+}
+
+header nav a:hover {
+	/*padding: 0px;*/
+	/*padding: 0%;*/
+	padding: 0em;
+}
+
+header nav a:last-child {
+	text-decoration: none;
+	padding: 10px 25px;
+	border: 2px solid darkslategray;
+	border-radius: 13px;
+	color: inherit;
+	font-weight: bold;
+	margin: 2px;
+	display: inline-block;
+	font-size: 1.4em;
+}
+
+header nav a:last-child:hover {
+	border: 4px solid darkslategray;
+	margin: 0px;
+	cursor: pointer;
+	background: darkslategray;
+	color: white;
+}
+
+/*
+================
+#resume-header
+================
+*/
+
+#resume-header {
+	border-bottom: 1px solid #2D4D60;
+	position: fixed;
+	width: 100%;
+	min-width: 839px;
+	margin-top: 11%; 
+	padding-top: 20px;
+	padding-bottom: 20px;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	text-align: center;
+}
+
+#resume-header>div {
+	max-width: 1159px;
+	margin: auto;
+}
+
+#resume-header div:nth-child(2) {
+	min-width: 1030px;
+}
+
+#resume-header h2 {
+	display: inline;
+	border-bottom: none;
+}
+
+#resume-header nav {
+	margin-top: 15px;
+}
+
+#resume-header nav a {
+	padding: 10px 0px; 
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+	background: transparent;
+	width: 195px;
+}
+
+#resume-header nav a:first-child {
+	color: #977142;
+	border: 2px solid #977142;
+}
+
+#resume-header nav a:first-child:hover {
+	background: #977142;
+	color: #FFF6EC;
+	border: 2px solid #977142;
+}
+
+#resume-header nav a:nth-child(2) {
+	color: #2D4D60;
+	border: 2px solid #2D4D60;
+}
+
+#resume-header nav a:nth-child(2):hover {
+	background: #2D4D60;
+	color: #BAC3C8;
+	border: 2px solid #2D4D60;
+}
+
+#resume-header nav a:nth-child(3) {
+	color: #975742;
+	border: 2px solid #975742;
+}
+
+#resume-header nav a:nth-child(3):hover {
+	background: #975742;
+	color: #FFF0EC;
+	border: 2px solid #975742;
+}
+
+#resume-header nav a:nth-child(4) {
+	color: #2E6A4C;
+	border: 2px solid #2E6A4C;
+}
+
+#resume-header nav a:nth-child(4):hover {
+	background: #6C9B83;
+	color: #C2D2CA;
+	border: 2px solid transparent;
+}
+
+#resume-header nav a:nth-child(5) {
+	color: #977142;
+	border: 2px solid #977142;
+}
+
+#resume-header nav a:nth-child(5):hover {
+	background: #977142;
+	color: #FFF6EC;
+	border: 2px solid #977142;
+}
+
+/*
+=====================
+Article
+=====================
+*/
+
+#purposeAndGoals {
+	margin-top: 120px;
+	color: #2E6A4C;
+	text-align: justify;
+}
+
+article section:first-child {
+	margin-top: 210px;
+	text-align: justify;
+}
+
+article section {
+	margin-top: 50px;
+}
+
+/*#education*/
+
+#experience li {
+	padding: 6px 0px;
+}
+
+#experience div {
+	margin-bottom: 26px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+}
+
+#experience div:last-child {
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
+/*article section:nth-child(2) {
+	color: #975742;
+}*/
+
+article section:nth-child(2) {
+	color: #2E6A4C;
+}
+
+/*languages*/
+
+#education {
+	text-align: center;
+}
+
+article section:nth-child(4) div:first-child {
+	color: #2E6A4C;
+	float:left;
+	width: 49%;
+}
+
+/*programs*/
+
+article section:nth-child(4) div:nth-child(2) {
+	/*color: #975742;*/
+	color: #2D4D60;
+	float: right;
+	width: 49%;
+}
+
+
+#languagesAndPrograms li {
+	text-align: center;
+	list-style-type: none;
+	font-size: 31px;
+}
+
+/*references*/
+
+.references {
+	/*border-top: 1px solid #2d4d60;*/
+	border-top-width: 2px;
+	border-top-style: dotted;
+	border-top-color: inherit;
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+	text-align: center;
+	padding: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	height: 180px;
+}
+
+
+/*@media (max-width: 480px) {
+
+}
+*/
