@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 	function introExplode(num) {
 		var introNumber = $('#introExplode span:nth-child('+num+')');
-		introNumber.fadeIn().delay(1200).hide(0);
+		introNumber.fadeIn().delay(1050).hide(0);
 		introExplodeCounter++;
 		setTimeout(function() {
 			blowUp(introNumber);
@@ -67,8 +67,20 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$('#welcome span').fadeIn(5000).delay(1000).fadeOut(5000);
 			$('#baliRain').animate({'volume': 0.5}, 5000).delay(1000).animate({'volume': 0}, 5000);
-		}, 9000);
+		}, 5000);
 	}
+
+	function setup() {
+		setTimeout(function() {
+			$('header').slideDown();
+			$('section').slideDown();
+		}, 1000);
+
+		setTimeout(function() {
+			$('*').css('overflow', 'auto');
+		}, 1200);
+		
+	}	
 
 	function introRoll() {
 		if (introFadeCounter < $('#introFades span').length) {
@@ -97,14 +109,57 @@ $(document).ready(function(){
 			}, 1200);
 		} else if (introExplodeCounter === $('#introExplode span').length) {
 			introExplodeLast(introExplodeCounter);
+			setTimeout(function() {
+				introRoll();
+			}, 16000);
+		} else {
+			$('.intro').hide();
+			setup();
 		}
 	}//end introRoll
 	
 // ================================
-// function calls
+// Intro
 // ================================
 	$('#blackout').fadeOut(1000); 
 	playBaliRain();
 	introRoll();
-	
+
+
 }); //end on ready
+
+
+
+// function fadeSequence() {
+	// 	if (introFadeCounter < $('#introFades span').length) {
+	// 		introFade(introFadeCounter);	
+	// 		setTimeout(function() {
+	// 			blink();
+	// 		}, 3000);
+	// 		setTimeout(function() {
+	// 			introRoll();
+	// 		}, 4000);
+	// 	} else if (introFadeCounter === $('#introFades span').length) {
+	// 		introFade(introFadeCounter);
+	// 		setTimeout(function() {
+	// 			$('#introFades span:last-child').addClass('blowUp');
+	// 			$('#baliRain').animate({'volume': 0}, 1000);
+	// 			playExplosion();
+	// 			blink();
+	// 		}, 2000);
+	// 		setTimeout(function() {
+	// 			introRoll();		
+	// 		}, 3000);
+	// 	}
+	// }
+
+	// function explodeSequence() {
+	// 	if (introExplodeCounter < $('#introExplode span').length) {
+	// 		introExplode(introExplodeCounter);	
+	// 		setTimeout(function() {
+	// 			introRoll();
+	// 		}, 1200);
+	// 	} else if (introExplodeCounter === $('#introExplode span').length) {
+	// 		introExplodeLast(introExplodeCounter);
+	// 	}
+	// }
