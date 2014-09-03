@@ -4,52 +4,13 @@
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
-	box-sizing: border-box;	
+	box-sizing: border-box;
+	overflow: hidden;		
 }
-
-/*========================
-Intro
-========================*/
-
-.intro {
-	padding-top: 9%;
-}
-
-.intro span {
-	text-align: center;
-	font-size: 4em;
-	position: absolute;
-	width: 100%;
-	top: 38%;
-	display: none;
-}
-
-.blowUp {
-	-webkit-transition-duration: 2s;
-	-moz-transition-duration: 2s;
-	-ms-transition-duration: 2s;
-	-o-transition-duration: 2s;
-	transition-duration: 2s;
-	-webkit-transform: scale(10000);
-	-moz-transform: scale(10000);
-	-ms-transform: scale(10000);
-	-o-transform: scale(10000);
-	transform: scale(10000);
-	-webkit-transition-timing-function: linear;
-	-moz-transition-timing-function: linear;
-	-ms-transition-timing-function: linear;
-	-o-transition-timing-function: linear;
-	transition-timing-function: linear;
-}
-
-/*========================
-After Intro
-========================*/
 
 body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: darkslategray;
-	overflow: hidden;	
 }
 
 span {
@@ -72,33 +33,6 @@ a:hover {
 	font-weight: bold;
 }
 
-h1 {
-	margin-bottom: 2px;
-}
-
-h2 {
-	border-bottom-width: 2px;
-	border-bottom-style: dotted;
-	border-bottom-color: inherit;
-	margin-bottom: 5px;
-	text-align: center;
-}
-
-h3 {
-	margin: 0px;
-	text-align: center;
-}
-
-.title, .dates {
-	display: block;
-	margin: 0px;
-	text-align: center;
-	font-weight: lighter;
-}
-
-.gutter {
-	height: 410px;
-}
 
 /*========================
 Blackout
@@ -118,12 +52,10 @@ Header
 header {
 	padding: 3% 5%;
 	border-bottom: 1px solid darkslategray;
-	position: fixed;
-	top: 0;
+	/*position: fixed;*/
 	width: 100%;
 	display: none;
 	background: white;
-	/*z-index: 1;*/
 }
 
 header span {
@@ -175,19 +107,50 @@ header nav a:last-child:hover {
 }
 
 /*========================
-Main Content
+Intro
 ========================*/
 
+.intro {
+	padding-top: 9%;
+}
+
+.intro span {
+	text-align: center;
+	font-size: 4em;
+	position: absolute;
+	width: 100%;
+	top: 38%;
+	display: none;
+}
+
+.blowUp {
+	-webkit-transition-duration: 2s;
+	-moz-transition-duration: 2s;
+	-ms-transition-duration: 2s;
+	-o-transition-duration: 2s;
+	transition-duration: 2s;
+	-webkit-transform: scale(10000);
+	-moz-transform: scale(10000);
+	-ms-transform: scale(10000);
+	-o-transform: scale(10000);
+	transform: scale(10000);
+	-webkit-transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-ms-transition-timing-function: linear;
+	-o-transition-timing-function: linear;
+	transition-timing-function: linear;
+}
+
 #main-content {
-	margin-top: 11%;
+	/*margin-top: 11%;*/
 	display: none;
 }
 
 .content {
 	padding: 0% 12% 3% 12%;
 	font-size: 2em;
-/*	height: 650px;
-	overflow-y: scroll;*/
+	overflow: scroll;
+	height: 1000px;
 }
 
 /*========================
@@ -199,7 +162,7 @@ About
 }
 
 .about aside span {
-	display: inline-block;
+	display: block;
 	font-weight: bold;
 	margin: 0.6em 0em;
 	font-size: 1.2em;
@@ -214,17 +177,11 @@ blockquote span {
 /*========================
 Resume
 ========================*/
-.resume {
-	position: relative;
-}
+
 .resume nav {
-	position: fixed;
-	top: 15%;
-	width: 100%;
 	text-align: center;
 	padding: 2em 1.3em;
 	border-bottom: 1px solid darkslategray;
-	background: white;
 }
 
 .resume nav a {
@@ -234,61 +191,6 @@ Resume
 	width: 20%;
 }
 
-#resume-content {
-	margin-top: 20%;
-}
-
-.resume section {
-	margin-top: 50px;
-}
-
 .resume h2 {
 	text-align: center;
-}
-
-#purpose p {
-	text-align: justify;
-}
-
-#experience li {
-	padding: 6px 0px;
-}
-
-#experience div {
-	margin-bottom: 26px;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: inherit;
-}
-
-#experience div:last-child {
-	margin-bottom: 0px;
-	border-bottom: 0px;
-}
-
-#education, #languagesAndPrograms {
-	text-align: center;
-}
-
-#languages {
-	width: 49%;
-	float: left;
-}
-
-#programs {
-	width: 49%;
-	float: right;
-}
-
-#references {
-	border-top-width: 2px;
-	border-top-style: dotted;
-	border-top-color: inherit;
-	border-bottom-width: 2px;
-	border-bottom-style: dotted;
-	border-bottom-color: inherit;
-	text-align: center;
-	padding: 15px;
-	font-size: 20px;
-	font-weight: bold;
 }
