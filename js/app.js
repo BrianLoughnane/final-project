@@ -77,6 +77,7 @@ $(document).ready(function(){
 		}, 1000);
 
 		setTimeout(function() {
+			$('body').css('overflow', 'scroll');
 			$('#main-content').slideDown();
 		}, 1500);
 		
