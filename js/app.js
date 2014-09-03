@@ -159,35 +159,35 @@ $(document).ready(function(){
 // ================================	
 
 	$('#main-content').on("click", "#navPurpose", function() {
-		$("body")
+		$(".content")
 		.animate(
-			{scrollTop: 0}, 
-			1500
+			{scrollTop: 27}, 
+			1000
 		);
 	});	
 
 	$('#main-content').on("click", "#navExperience", function() {
-		$("body")
+		$(".content")
 		.animate(
-			{scrollTop: 318}, 
-			1500
+			{scrollTop: 439}, 
+			1000
 		);
 	});	
 
 	$('#main-content').on("click", "#navEducation", function() {
-		$("body")
+		$(".content")
 		.animate(
-			{scrollTop: 1449}, 
-			1500
+			{scrollTop: 1954}, 
+			1000
 		);
 	});	
 
 
 	$('#main-content').on("click", "#navLanguages", function() {
-		$("body")
+		$(".content")
 		.animate(
-			{scrollTop: 1829}, 
-			1500
+			{scrollTop: 2454}, 
+			1000
 		);
 	});	
 

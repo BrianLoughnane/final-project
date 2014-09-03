@@ -33,16 +33,29 @@ a:hover {
 	font-weight: bold;
 }
 
+h1 {
+	margin-bottom: 2px;
+}
 
-/*========================
-Blackout
-========================*/
+h2 {
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+	margin-bottom: 5px;
+	text-align: center;
+}
 
-#blackout {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: darkslategray;
+h3 {
+	margin: 0px;
+	text-align: center;
+}
+
+ul {
+	list-style: circle inside;
+}
+
+.gutter {
+	height: 610px;
 }
 
 /*========================
@@ -109,6 +122,13 @@ header nav a:last-child:hover {
 /*========================
 Intro
 ========================*/
+
+#blackout {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: darkslategray;
+}
 
 .intro {
 	padding-top: 9%;
@@ -178,6 +198,10 @@ blockquote span {
 Resume
 ========================*/
 
+.resume {
+	color: darkred;
+}
+
 .resume nav {
 	text-align: center;
 	padding: 2em 1.3em;
@@ -193,4 +217,63 @@ Resume
 
 .resume h2 {
 	text-align: center;
+	padding-bottom: 2%;
+}
+
+#purpose p {
+	text-align: justify;
+}
+
+#experience li {
+	padding: 6px 0px;
+}
+
+#experience div {
+	margin-bottom: 26px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+}
+
+#experience div:last-child {
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
+.resume h2 {
+	color: darkslategray;
+}
+
+h3, .title, .dates {
+	display: block;
+	margin: 0px;
+	text-align: center;
+	font-weight: lighter;
+}
+
+#education, #languagesAndPrograms {
+	text-align: center;
+}
+
+#languages {
+	width: 49%;
+	float: left;
+}
+
+#programs {
+	width: 49%;
+	float: right;
+}
+
+#references {
+	border-top-width: 2px;
+	border-top-style: dotted;
+	border-top-color: inherit;
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: inherit;
+	text-align: center;
+	padding: 15px;
+	font-size: 20px;
+	font-weight: bold;
 }
