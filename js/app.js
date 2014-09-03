@@ -124,9 +124,9 @@ $(document).ready(function(){
 // Intro
 // ================================
 	$('#blackout').fadeOut(1000); 
-	// playBaliRain();
-	// introRoll();
-	setup();
+	playBaliRain();
+	introRoll();
+	// setup();
 
 // ================================
 // Main Nav Event Handlers

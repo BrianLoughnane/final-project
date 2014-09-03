@@ -198,8 +198,16 @@ blockquote span {
 Resume
 ========================*/
 
-.resume {
+.content {
 	color: darkred;
+}
+
+.content blockquote {
+	color: darkgray;
+}
+
+.content h2, .about span, .about strong {
+	color: darkslategray;
 }
 
 .resume nav {
@@ -238,10 +246,6 @@ Resume
 #experience div:last-child {
 	margin-bottom: 0px;
 	border-bottom: 0px;
-}
-
-.resume h2 {
-	color: darkslategray;
 }
 
 h3, .title, .dates {
