@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
 	/*outline: 1px dotted red;*/
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -52,7 +52,7 @@ Header
 header {
 	padding: 3% 5%;
 	border-bottom: 1px solid darkslategray;
-	position: fixed;
+	/*position: fixed;*/
 	width: 100%;
 	display: none;
 	background: white;
@@ -142,25 +142,26 @@ Intro
 }
 
 #main-content {
-	margin-top: 8%;
+	/*margin-top: 11%;*/
 	display: none;
 }
 
-.about {
-	/*display: none;*/
-	padding: 3% 12%;
+.content {
+	padding: 0% 12% 3% 12%;
 	font-size: 2em;
+	overflow: scroll;
+	height: 1000px;
 }
 
-/*section:first-child {
-	margin-top: 8%;
-}*/
+/*========================
+About
+========================*/
 
 .about aside {
 	font-size: 1.5em;
 }
 
-aside span {
+.about aside span {
 	display: block;
 	font-weight: bold;
 	margin: 0.6em 0em;
@@ -173,3 +174,23 @@ blockquote span {
 	margin-right: 8.5em;
 }
 
+/*========================
+Resume
+========================*/
+
+.resume nav {
+	text-align: center;
+	padding: 2em 1.3em;
+	border-bottom: 1px solid darkslategray;
+}
+
+.resume nav a {
+	font-size: 1.9em;
+	margin: 0em 0.3em;
+	display: inline-block;
+	width: 20%;
+}
+
+.resume h2 {
+	text-align: center;
+}

@@ -79,14 +79,12 @@ $(document).ready(function(){
 		setTimeout(function() {
 			$('#main-content').slideDown();
 		}, 1500);
-
-		setTimeout(function() {
-			$('*').css('overflow', 'auto');
-		}, 1700);
 		
 	}	
 
-	function fadeSequence() {
+
+
+	function introRoll() {
 		if (introFadeCounter < $('#introFades span').length) {
 			introFade(introFadeCounter);	
 			setTimeout(function() {
@@ -106,31 +104,99 @@ $(document).ready(function(){
 			setTimeout(function() {
 				introRoll();		
 			}, 3000);
-		}
-
-		condition = true;
-	}
-
-	function explodeSequence() {
-		if (introExplodeCounter < $('#introExplode span').length) {
+		} else if (introExplodeCounter < $('#introExplode span').length) {
 			introExplode(introExplodeCounter);	
 			setTimeout(function() {
 				introRoll();
 			}, 1200);
 		} else if (introExplodeCounter === $('#introExplode span').length) {
 			introExplodeLast(introExplodeCounter);
+			setTimeout(function() {
+				introRoll();
+			}, 16000);
+		} else {
+			$('.intro').hide();
+			setup();
 		}
-	}
+	}//end introRoll
+	
+// ================================
+// Intro
+// ================================
+	$('#blackout').fadeOut(1000); 
+	// playBaliRain();
+	// introRoll();
+	setup();
 
-	function introRoll() {
-		var condition = false;
-		fadeSequence();
-		if(condition) {
-			explodeSequence();
-		}
-	}
+// ================================
+// Main Nav Event Handlers
+// ================================
 
-	// function introRoll() {
+	$('#resume-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('resume.html');
+		}, 400);
+		
+	});
+
+	$('#home-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('about.html');
+		}, 400);
+		
+	});
+
+// ================================
+// Resume App Event Handlers
+// ================================	
+
+	$('#main-content').on("click", "#navPurpose", function() {
+		$("body")
+		.animate(
+			{scrollTop: 0}, 
+			1500
+		);
+	});	
+
+	$('#main-content').on("click", "#navExperience", function() {
+		$("body")
+		.animate(
+			{scrollTop: 318}, 
+			1500
+		);
+	});	
+
+	$('#main-content').on("click", "#navEducation", function() {
+		$("body")
+		.animate(
+			{scrollTop: 1449}, 
+			1500
+		);
+	});	
+
+
+	$('#main-content').on("click", "#navLanguages", function() {
+		$("body")
+		.animate(
+			{scrollTop: 1829}, 
+			1500
+		);
+	});	
+
+
+}); //end on ready
+
+
+
+	// function fadeSequence() {
 	// 	if (introFadeCounter < $('#introFades span').length) {
 	// 		introFade(introFadeCounter);	
 	// 		setTimeout(function() {
@@ -150,53 +216,26 @@ $(document).ready(function(){
 	// 		setTimeout(function() {
 	// 			introRoll();		
 	// 		}, 3000);
-	// 	} else if (introExplodeCounter < $('#introExplode span').length) {
+	// 	}
+
+	// 	condition = true;
+	// }
+
+	// function explodeSequence() {
+	// 	if (introExplodeCounter < $('#introExplode span').length) {
 	// 		introExplode(introExplodeCounter);	
 	// 		setTimeout(function() {
 	// 			introRoll();
 	// 		}, 1200);
 	// 	} else if (introExplodeCounter === $('#introExplode span').length) {
 	// 		introExplodeLast(introExplodeCounter);
-	// 		setTimeout(function() {
-	// 			introRoll();
-	// 		}, 16000);
-	// 	} else {
-	// 		$('.intro').hide();
-	// 		setup();
 	// 	}
-	// }//end introRoll
-	
-// ================================
-// Intro
-// ================================
-	$('#blackout').fadeOut(1000); 
-	playBaliRain();
-	introRoll();
+	// }
 
-	$('#resume-link').on("click", function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		$('#main-content').slideUp().delay(400).slideDown();
-		setTimeout(function() {
-			$('#main-content').load('resume2.html');
-		}, 400);
-		
-	});
-
-	$('#home-link').on("click", function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		$('#main-content').slideUp().delay(400).slideDown();
-		setTimeout(function() {
-			$('#main-content').load('about.html');
-		}, 400);
-		
-	});
-
-
-}); //end on ready
-
-
-
+	// function introRoll() {
+	// 	var condition = false;
+	// 	fadeSequence();
+	// 	if(condition) {
+	// 		explodeSequence();
+	// 	}
+	// }
