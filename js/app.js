@@ -124,24 +124,18 @@ $(document).ready(function(){
 // Intro
 // ================================
 	$('#blackout').fadeOut(1000); 
-	playBaliRain();
-	introRoll();
-	// setup();
+	// playBaliRain();
+	// introRoll();
+	setup();
 
 // ================================
 // Main Nav Event Handlers
 // ================================
-
-	$('#resume-link').on("click", function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		$('#main-content').slideUp().delay(400).slideDown();
-		setTimeout(function() {
-			$('#main-content').load('resume.html');
-		}, 400);
-		
-	});
+	
+	// function applyLinkStyle() {
+	// 	$(this).closest('nav').find('a').removeClass('current-nav-link');
+	// 	$(this).addClass('current-nav-link');
+	// }
 
 	$('#home-link').on("click", function(e) {
 		e.preventDefault();
@@ -151,8 +145,32 @@ $(document).ready(function(){
 		setTimeout(function() {
 			$('#main-content').load('about.html');
 		}, 400);
-		
+
+		$(this).closest('div').find('a').removeClass('current-nav-link');
 	});
+
+	$('#resume-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('resume.html');
+		}, 400);
+
+		setTimout(function() {
+			$('#resume-link').closest('nav').find('a').removeClass('current-nav-link');
+			$('#resume-link').addClass('current-nav-link');
+		}, 1000);
+	});
+
+	// $('#header-container nav a').on("mouseover", function() {
+	// 	$(this).addClass('current-nav-link');
+	// });
+
+	// $('#header-container nav a').on("mouseleave", function() {
+	// 	$(this).removeClass('current-nav-link');
+	// });
 
 // ================================
 // Resume App Event Handlers
