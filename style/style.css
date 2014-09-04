@@ -39,8 +39,8 @@ h1 {
 
 h2 {
 	border-bottom-width: 2px;
-	border-bottom-style: dotted;
-	border-bottom-color: inherit;
+	border-bottom-style: solid;
+	border-bottom-color: darkgray;
 	margin-bottom: 5px;
 	text-align: center;
 }
@@ -106,7 +106,8 @@ Header
 
 header {
 	padding: 3% 5%;
-	border-bottom: 1px solid darkslategray;
+	border-bottom: 2px solid darkslategray;
+	border-bottom: 2px solid darkred;
 	/*position: fixed;*/
 	width: 100%;
 	display: none;
@@ -142,7 +143,7 @@ header nav a:hover {
 	padding: 0em;
 }
 
-header nav a:last-child {
+.contact-link {
 	text-decoration: none;
 	padding: 10px 25px;
 	border: 2px solid darkslategray;
@@ -154,11 +155,12 @@ header nav a:last-child {
 	font-size: 1.4em;
 }
 
-header nav a:last-child:hover {
-	border: 4px solid darkslategray;
+.contact-link:hover {
+	border: 4px solid darkred;
 	margin: 0px;
+	padding: 10px 25px;
 	cursor: pointer;
-	background: darkslategray;
+	background: darkred;
 	color: white;
 }
 
@@ -166,6 +168,20 @@ header nav a:last-child:hover {
 	font-weight: bold;
 	border-bottom: 2px solid;
 	margin-bottom: 0px;
+	color: darkred;
+}
+
+.current-nav-link:hover {
+	padding: 0em 0.25em;
+}
+
+.margin-fix {
+	margin-right: 2.75em;
+}
+
+.contact-link-selected {
+	color: darkred;
+	border-color: darkred;
 }
 
 /*========================
@@ -182,6 +198,22 @@ Main Content
 	font-size: 2em;
 	overflow: scroll;
 	height: 1000px;
+}
+
+.content {
+	color: darkred;
+}
+
+.content blockquote {
+	color: darkgray;
+}
+
+.content h1 {
+	text-align: center;
+}
+
+.content h2, .about span, .about strong {
+	color: darkslategray;
 }
 
 /*========================
@@ -209,22 +241,12 @@ blockquote span {
 Resume
 ========================*/
 
-.content {
-	color: darkred;
-}
 
-.content blockquote {
-	color: darkgray;
-}
-
-.content h2, .about span, .about strong {
-	color: darkslategray;
-}
 
 .resume nav {
 	text-align: center;
 	padding: 2em 1.3em;
-	border-bottom: 1px solid darkslategray;
+	border-bottom: 2px solid darkslategray;
 }
 
 .resume nav a {
@@ -234,7 +256,7 @@ Resume
 	width: 20%;
 }
 
-.resume h2 {
+.page h2 {
 	text-align: center;
 	padding-bottom: 2%;
 }
@@ -250,8 +272,8 @@ Resume
 #experience div {
 	margin-bottom: 26px;
 	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: inherit;
+	border-bottom-style: solid;
+	border-bottom-color: darkgray;
 }
 
 #experience div:last-child {
@@ -291,4 +313,38 @@ h3, .title, .dates {
 	padding: 15px;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+/*========================
+Projects
+========================*/
+
+.projects  nav {
+	width: 20%;
+	float: left;
+	font-size: 1.9em;
+	text-align: center;
+	padding: 3em 1.3em;
+
+}
+
+.projects nav a {
+	display: block;
+	margin-bottom: 2em;
+}
+
+.projects nav a.margin-fix-p {
+	margin-bottom: 1.95em;
+}
+
+.projects .content {
+	width: 80%;
+	float: right;
+	border-left: 2px solid darkslategray;
+}
+
+.current-nav-link-p {
+	font-weight: bold;
+	border-bottom: 2px solid;
+	color: darkred;	
 }

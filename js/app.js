@@ -131,11 +131,11 @@ $(document).ready(function(){
 // ================================
 // Main Nav Event Handlers
 // ================================
-	
-	// function applyLinkStyle() {
-	// 	$(this).closest('nav').find('a').removeClass('current-nav-link');
-	// 	$(this).addClass('current-nav-link');
-	// }
+
+	function linkStyleClear() {
+		$('header nav a').removeClass('current-nav-link').removeClass('current-nav-link-alt').removeClass('margin-fix');
+		$('.contact-link').removeClass('contact-link-selected');
+	}
 
 	$('#home-link').on("click", function(e) {
 		e.preventDefault();
@@ -146,7 +146,7 @@ $(document).ready(function(){
 			$('#main-content').load('about.html');
 		}, 400);
 
-		$(this).closest('div').find('a').removeClass('current-nav-link');
+		linkStyleClear();
 	});
 
 	$('#resume-link').on("click", function(e) {
@@ -158,25 +158,49 @@ $(document).ready(function(){
 			$('#main-content').load('resume.html');
 		}, 400);
 
-		setTimout(function() {
-			$('#resume-link').closest('nav').find('a').removeClass('current-nav-link');
-			$('#resume-link').addClass('current-nav-link');
-		}, 1000);
+		linkStyleClear();
+		$(this).addClass('margin-fix');
+		$(this).addClass('current-nav-link');
 	});
 
-	// $('#header-container nav a').on("mouseover", function() {
-	// 	$(this).addClass('current-nav-link');
-	// });
+	$('#projects-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
 
-	// $('#header-container nav a').on("mouseleave", function() {
-	// 	$(this).removeClass('current-nav-link');
-	// });
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('projects.html');
+		}, 400);
+
+		linkStyleClear();
+		$(this).addClass('margin-fix');
+		$('#resume-link').addClass('margin-fix');
+		$(this).addClass('current-nav-link');
+	});
+
+	$('.contact-link').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#main-content').slideUp().delay(400).slideDown();
+		setTimeout(function() {
+			$('#main-content').load('contact.html');
+		}, 400);
+
+		linkStyleClear();
+		$(this).addClass('contact-link-selected');
+	});
+
 
 // ================================
-// Resume App Event Handlers
+// Resume Event Handlers
 // ================================	
+	
 
 	$('#main-content').on("click", "#navPurpose", function() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navPurpose').addClass('current-nav-link');
+
 		$(".content")
 		.animate(
 			{scrollTop: 27}, 
@@ -185,6 +209,9 @@ $(document).ready(function(){
 	});	
 
 	$('#main-content').on("click", "#navExperience", function() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navExperience').addClass('current-nav-link');
+
 		$(".content")
 		.animate(
 			{scrollTop: 439}, 
@@ -193,6 +220,9 @@ $(document).ready(function(){
 	});	
 
 	$('#main-content').on("click", "#navEducation", function() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navEducation').addClass('current-nav-link');
+
 		$(".content")
 		.animate(
 			{scrollTop: 1954}, 
@@ -202,6 +232,58 @@ $(document).ready(function(){
 
 
 	$('#main-content').on("click", "#navLanguages", function() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navLanguages').addClass('current-nav-link');
+
+		$(".content")
+		.animate(
+			{scrollTop: 2454}, 
+			1000
+		);
+	});	
+
+// ================================
+// Projects Event Handlers
+// ================================	
+	$('#main-content').on("click", "#navFeatured", function() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
+
+
+		$(".content")
+		.animate(
+			{scrollTop: 27}, 
+			1000
+		);
+	});	
+
+	$('#main-content').on("click", "#navPersonal", function() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
+
+		$(".content")
+		.animate(
+			{scrollTop: 439}, 
+			1000
+		);
+	});	
+
+	$('#main-content').on("click", "#navThinkful", function() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
+
+		$(".content")
+		.animate(
+			{scrollTop: 1954}, 
+			1000
+		);
+	});	
+
+
+	$('#main-content').on("click", "#navFreelance", function() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
+
 		$(".content")
 		.animate(
 			{scrollTop: 2454}, 
