@@ -119,6 +119,11 @@ header span {
 	font-size: 2em;
 	font-weight: 300;
 	margin-top: 0.4em;
+	color: darkred;
+}
+
+header span strong {
+	color: darkslategray;
 }
 
 header nav {
@@ -146,13 +151,13 @@ header nav a:hover {
 .contact-link {
 	text-decoration: none;
 	padding: 10px 25px;
-	border: 2px solid darkslategray;
 	border-radius: 13px;
-	color: inherit;
 	font-weight: bold;
 	margin: 2px;
 	display: inline-block;
 	font-size: 1.4em;
+	border: 2px solid darkred;
+	color: darkred;
 }
 
 .contact-link:hover {
@@ -168,6 +173,9 @@ header nav a:hover {
 	font-weight: bold;
 	border-bottom: 2px solid;
 	margin-bottom: 0px;
+}
+
+header .current-nav-link {
 	color: darkred;
 }
 
@@ -194,14 +202,14 @@ Main Content
 }
 
 .content {
-	padding: 0% 12% 3% 12%;
+	/*padding: 0% 12% 3% 12%;*/
 	font-size: 2em;
 	overflow: scroll;
 	height: 1000px;
-}
-
-.content {
+	padding: 0% 22%;
 	color: darkred;
+	position: relative;
+	top: 0;
 }
 
 .content blockquote {
@@ -247,13 +255,15 @@ Resume
 	text-align: center;
 	padding: 2em 1.3em;
 	border-bottom: 2px solid darkslategray;
+	color: cadetblue;
 }
 
 .resume nav a {
 	font-size: 1.9em;
-	margin: 0em 0.3em;
+	margin: 0em 2.6em;
 	display: inline-block;
-	width: 20%;
+	padding: 0em 0.25em;
+	width: 12%;
 }
 
 .page h2 {
@@ -320,12 +330,20 @@ Projects
 ========================*/
 
 .projects  nav {
-	width: 20%;
+	/*width: 20%;
 	float: left;
 	font-size: 1.9em;
 	text-align: center;
 	padding: 3em 1.3em;
-
+	color: cadetblue;*/
+	/*test*/
+	width: 11%;
+	float: left;
+	font-size: 1.9em;
+	text-align: center;
+	/* padding: 3em 1.3em; */
+	color: cadetblue;
+	margin: 3em 1.8em;
 }
 
 .projects nav a {
@@ -341,10 +359,53 @@ Projects
 	width: 80%;
 	float: right;
 	border-left: 2px solid darkslategray;
+	padding: 0% 16%;
 }
 
 .current-nav-link-p {
 	font-weight: bold;
-	border-bottom: 2px solid;
-	color: darkred;	
+	border-bottom: 2px solid;	
+}
+
+/*========================
+Contact
+========================*/
+
+form {
+	padding: 5% 0%;
+}
+
+input, textarea {
+	padding: 2% 3%;
+	display: block;
+	width: 70%;
+	margin: 5% auto;
+	border: none;
+	border-bottom: 1px solid darkslategray;
+}
+
+input:focus {
+	outline: none;
+}
+
+textarea:focus {
+	border: 1px solid darkgray;
+	outline: none;
+}
+
+textarea {
+	height: 500px;
+}
+
+input[type="submit"] {
+	background: white;
+	border: 2px solid darkred;
+	font-weight: bold;
+	border-radius: 13px;
+}
+
+input[type="submit"]:hover {
+	border: 4px solid darkred;
+	background: darkred;
+	color: white;
 }

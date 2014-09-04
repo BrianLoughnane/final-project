@@ -154,9 +154,17 @@ $(document).ready(function(){
 		e.stopPropagation();
 
 		$('#main-content').slideUp().delay(400).slideDown();
+		
 		setTimeout(function() {
 			$('#main-content').load('resume.html');
 		}, 400);
+
+		setTimeout(function() {
+			purposeLocation = $('#purpose').position().top;
+			experienceLocation = $('#experience').position().top;
+			educationLocation = $('#education').position().top;
+			languagesLocation = $('#languages').position().top;
+		}, 1000);
 
 		linkStyleClear();
 		$(this).addClass('margin-fix');
@@ -195,7 +203,6 @@ $(document).ready(function(){
 // ================================
 // Resume Event Handlers
 // ================================	
-	
 
 	$('#main-content').on("click", "#navPurpose", function() {
 		$('.resume nav a').removeClass('current-nav-link');
@@ -203,7 +210,8 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 27}, 
+			// {scrollTop: 27}, 
+			{scrollTop: purposeLocation}, 			
 			1000
 		);
 	});	
@@ -214,7 +222,8 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 439}, 
+			// {scrollTop: 439},
+			{scrollTop: experienceLocation},  
 			1000
 		);
 	});	
@@ -225,7 +234,8 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 1954}, 
+			// {scrollTop: 1954}, 
+			{scrollTop: educationLocation}, 
 			1000
 		);
 	});	
@@ -237,7 +247,8 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 2454}, 
+			// {scrollTop: 2454}, 
+			{scrollTop: languagesLocation}, 
 			1000
 		);
 	});	
