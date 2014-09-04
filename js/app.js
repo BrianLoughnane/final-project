@@ -180,6 +180,14 @@ $(document).ready(function(){
 			$('#main-content').load('projects.html');
 		}, 400);
 
+		setTimeout(function() {
+			// Vars here 
+			featuredLocation = $('#featured').position().top;
+			personalLocation = $('#personal').position().top;
+			thinkfulLocation = $('#thinkful').position().top;
+			freelanceLocation = $('#freelance').position().top;
+		}, 1000);
+
 		linkStyleClear();
 		$(this).addClass('margin-fix');
 		$('#resume-link').addClass('margin-fix');
@@ -256,6 +264,7 @@ $(document).ready(function(){
 // ================================
 // Projects Event Handlers
 // ================================	
+
 	$('#main-content').on("click", "#navFeatured", function() {
 		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
 		$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
@@ -263,7 +272,7 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 27}, 
+			{scrollTop: featuredLocation}, 
 			1000
 		);
 	});	
@@ -274,7 +283,7 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 439}, 
+			{scrollTop: personalLocation}, 
 			1000
 		);
 	});	
@@ -285,7 +294,7 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 1954}, 
+			{scrollTop: thinkfulLocation}, 
 			1000
 		);
 	});	
@@ -297,7 +306,7 @@ $(document).ready(function(){
 
 		$(".content")
 		.animate(
-			{scrollTop: 2454}, 
+			{scrollTop: freelanceLocation}, 
 			1000
 		);
 	});	
