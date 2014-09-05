@@ -212,7 +212,7 @@ $(document).ready(function(){
 		languagesLocation = $('#languages').position().top;
 
 		highlightPurpose();
-		
+
 		$('.content').on('scroll', function() {
 			if($('.content').scrollTop() >= purposeLocation && $('.content').scrollTop() < experienceLocation) {
 				highlightPurpose();				
@@ -294,31 +294,47 @@ $(document).ready(function(){
 	function projectsSetup() {
 		featuredLocation = $('#featured').position().top;
 		personalLocation = $('#personal').position().top;
-		thinkfulLocation = $('#thinkful').position().top;
-		freelanceLocation = $('#freelance').position().top;
+		thinkfulLocation = $('#thinkful').position().top ;
+		freelanceLocation = $('#freelance').position().top ;
+
+		highlightFeatured();
 
 		$('.content').on('scroll', function() {
-			if($('.content').scrollTop() >= featuredLocation && $('.content').scrollTop() < personalLocation) {
-				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-				$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
-			} else if($('.content').scrollTop() >= personalLocation && $('.content').scrollTop() < thinkfulLocation) {
-				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-				$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
-			} else if($('.content').scrollTop() >= thinkfulLocation && $('.content').scrollTop() < freelanceLocation) {
-				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-				$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
-			} else if($('.content').scrollTop() >= freelanceLocation) {
-				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-				$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
-			}
+				if($('.content').scrollTop() >= featuredLocation && $('.content').scrollTop() < personalLocation -1) {
+					highlightFeatured();
+				} else if($('.content').scrollTop() >= personalLocation -1 && $('.content').scrollTop() < thinkfulLocation -1) {
+					highlightPersonal();
+				} else if($('.content').scrollTop() >= thinkfulLocation -1 && $('.content').scrollTop() < freelanceLocation -1) {
+					highlightThinkful();
+				} else if($('.content').scrollTop() >= freelanceLocation -1) {
+					highlightFreelance();
+				}
 		});
 		
 	}	
 
-	$('#main-content').on("click", "#navFeatured", function() {
+	function highlightFeatured() {
 		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
 		$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
+	}
 
+	function highlightPersonal() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
+	}
+
+	function highlightThinkful() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
+	}
+
+	function highlightFreelance() {
+		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+		$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
+	}
+
+	$('#main-content').on("click", "#navFeatured", function() {
+		// highlightFeatured();
 
 		$(".content")
 		.animate(
@@ -328,8 +344,7 @@ $(document).ready(function(){
 	});	
 
 	$('#main-content').on("click", "#navPersonal", function() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
+		// highlightPersonal();
 
 		$(".content")
 		.animate(
@@ -339,8 +354,7 @@ $(document).ready(function(){
 	});	
 
 	$('#main-content').on("click", "#navThinkful", function() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
+		// highlightThinkful();
 
 		$(".content")
 		.animate(
@@ -351,8 +365,7 @@ $(document).ready(function(){
 
 
 	$('#main-content').on("click", "#navFreelance", function() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
+		// highlightFreelance();
 
 		$(".content")
 		.animate(
