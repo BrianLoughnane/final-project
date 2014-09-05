@@ -78,6 +78,7 @@ $(document).ready(function(){
 
 		setTimeout(function() {
 			$('#main-content').slideDown();
+			playExplosion();
 		}, 1500);
 		
 	}	
@@ -141,7 +142,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(400).slideDown();
+		$('#main-content').slideUp().delay(400).slideDown(playExplosion);
 		setTimeout(function() {
 			$('#main-content').load('about.html');
 		}, 400);
@@ -153,7 +154,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(400).slideDown();
+		$('#main-content').slideUp().delay(400).slideDown(playExplosion);
 		
 		setTimeout(function() {
 			$('#main-content').load('resume.html');
@@ -172,7 +173,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(3000).slideDown();
+		$('#main-content').slideUp().delay(3000).slideDown(playLightning);
 		setTimeout(function() {
 			$('#main-content').load('projects.html');
 		}, 400);
@@ -200,7 +201,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(400).slideDown();
+		$('#main-content').slideUp().delay(400).slideDown(playExplosion);
 		setTimeout(function() {
 			$('#main-content').load('contact.html');
 		}, 400);
