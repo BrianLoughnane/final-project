@@ -200,6 +200,9 @@ $(document).ready(function(){
 		$(this).addClass('contact-link-selected');
 	});
 
+	function scrollTo(location) {
+		$(".content").animate({scrollTop: location}, 1000);
+	}
 
 // ================================
 // Resume
@@ -214,13 +217,13 @@ $(document).ready(function(){
 		highlightPurpose();
 
 		$('.content').on('scroll', function() {
-			if($('.content').scrollTop() >= purposeLocation && $('.content').scrollTop() < experienceLocation) {
+			if($('.content').scrollTop() >= purposeLocation -1 && $('.content').scrollTop() < experienceLocation -1) {
 				highlightPurpose();				
-			} else if($('.content').scrollTop() >= experienceLocation && $('.content').scrollTop() < educationLocation) {
+			} else if($('.content').scrollTop() >= experienceLocation -1 && $('.content').scrollTop() < educationLocation -1) {
 				highlightExperience();
-			} else if($('.content').scrollTop() >= educationLocation && $('.content').scrollTop() < languagesLocation) {
+			} else if($('.content').scrollTop() >= educationLocation -1 && $('.content').scrollTop() < languagesLocation -1) {
 				highlightEducation();
-			} else if($('.content').scrollTop() >= languagesLocation) {
+			} else if($('.content').scrollTop() >= languagesLocation -1) {
 				highlightLanguages();
 			}
 		});
@@ -247,44 +250,20 @@ $(document).ready(function(){
 	}
 
 	$('#main-content').on("click", "#navPurpose", function() {
-		highlightPurpose();
-
-		$(".content")
-		.animate(
-			{scrollTop: purposeLocation}, 			
-			1000
-		);
+		scrollTo(purposeLocation);
 	});	
 
 	$('#main-content').on("click", "#navExperience", function() {
-		highlightExperience();
-
-		$(".content")
-		.animate(
-			{scrollTop: experienceLocation},  
-			1000
-		);
+		scrollTo(experienceLocation);
 	});	
 
 	$('#main-content').on("click", "#navEducation", function() {
-		highlightEducation();
-
-		$(".content")
-		.animate(
-			{scrollTop: educationLocation}, 
-			1000
-		);
+		scrollTo(educationLocation);
 	});	
 
 
 	$('#main-content').on("click", "#navLanguages", function() {
-		highlightLanguages();
-
-		$(".content")
-		.animate(
-			{scrollTop: languagesLocation}, 
-			1000
-		);
+		scrollTo(languagesLocation);
 	});	
 
 // ================================
@@ -300,7 +279,7 @@ $(document).ready(function(){
 		highlightFeatured();
 
 		$('.content').on('scroll', function() {
-				if($('.content').scrollTop() >= featuredLocation && $('.content').scrollTop() < personalLocation -1) {
+				if($('.content').scrollTop() >= featuredLocation -1 && $('.content').scrollTop() < personalLocation -1) {
 					highlightFeatured();
 				} else if($('.content').scrollTop() >= personalLocation -1 && $('.content').scrollTop() < thinkfulLocation -1) {
 					highlightPersonal();
@@ -334,44 +313,20 @@ $(document).ready(function(){
 	}
 
 	$('#main-content').on("click", "#navFeatured", function() {
-		// highlightFeatured();
-
-		$(".content")
-		.animate(
-			{scrollTop: featuredLocation}, 
-			1000
-		);
+		scrollTo(featuredLocation);
 	});	
 
 	$('#main-content').on("click", "#navPersonal", function() {
-		// highlightPersonal();
-
-		$(".content")
-		.animate(
-			{scrollTop: personalLocation}, 
-			1000
-		);
+		scrollTo(personalLocation);
 	});	
 
 	$('#main-content').on("click", "#navThinkful", function() {
-		// highlightThinkful();
-
-		$(".content")
-		.animate(
-			{scrollTop: thinkfulLocation}, 
-			1000
-		);
+		scrollTo(thinkfulLocation);
 	});	
 
 
 	$('#main-content').on("click", "#navFreelance", function() {
-		// highlightFreelance();
-
-		$(".content")
-		.animate(
-			{scrollTop: freelanceLocation}, 
-			1000
-		);
+		scrollTo(freelanceLocation);
 	});	
 
 
