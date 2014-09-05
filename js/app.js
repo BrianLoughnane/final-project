@@ -181,11 +181,7 @@ $(document).ready(function(){
 		}, 400);
 
 		setTimeout(function() {
-			// Vars here 
-			featuredLocation = $('#featured').position().top;
-			personalLocation = $('#personal').position().top;
-			thinkfulLocation = $('#thinkful').position().top;
-			freelanceLocation = $('#freelance').position().top;
+			projectsSetup();
 		}, 1000);
 
 		linkStyleClear();
@@ -209,7 +205,7 @@ $(document).ready(function(){
 
 
 // ================================
-// Resume Event Handlers
+// Resume
 // ================================	
 
 	$('#main-content').on("click", "#navPurpose", function() {
@@ -262,8 +258,32 @@ $(document).ready(function(){
 	});	
 
 // ================================
-// Projects Event Handlers
+// Projects 
 // ================================	
+
+	function projectsSetup() {
+		featuredLocation = $('#featured').position().top;
+		personalLocation = $('#personal').position().top;
+		thinkfulLocation = $('#thinkful').position().top;
+		freelanceLocation = $('#freelance').position().top;
+
+		$('.content').on('scroll', function() {
+			if($('.content').scrollTop() >= featuredLocation && $('.content').scrollTop() < personalLocation) {
+				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+				$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
+			} else if($('.content').scrollTop() >= personalLocation && $('.content').scrollTop() < thinkfulLocation) {
+				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+				$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
+			} else if($('.content').scrollTop() >= thinkfulLocation && $('.content').scrollTop() < freelanceLocation) {
+				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+				$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
+			} else if($('.content').scrollTop() >= freelanceLocation) {
+				$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
+				$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
+			}
+		});
+		
+	}	
 
 	$('#main-content').on("click", "#navFeatured", function() {
 		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
