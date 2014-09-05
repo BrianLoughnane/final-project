@@ -160,10 +160,7 @@ $(document).ready(function(){
 		}, 400);
 
 		setTimeout(function() {
-			purposeLocation = $('#purpose').position().top;
-			experienceLocation = $('#experience').position().top;
-			educationLocation = $('#education').position().top;
-			languagesLocation = $('#languages').position().top;
+			resumeSetup();
 		}, 1000);
 
 		linkStyleClear();
@@ -208,37 +205,72 @@ $(document).ready(function(){
 // Resume
 // ================================	
 
-	$('#main-content').on("click", "#navPurpose", function() {
+	function resumeSetup() {
+		purposeLocation = $('#purpose').position().top;
+		experienceLocation = $('#experience').position().top;
+		educationLocation = $('#education').position().top;
+		languagesLocation = $('#languages').position().top;
+
+		highlightPurpose();
+		
+		$('.content').on('scroll', function() {
+			if($('.content').scrollTop() >= purposeLocation && $('.content').scrollTop() < experienceLocation) {
+				highlightPurpose();				
+			} else if($('.content').scrollTop() >= experienceLocation && $('.content').scrollTop() < educationLocation) {
+				highlightExperience();
+			} else if($('.content').scrollTop() >= educationLocation && $('.content').scrollTop() < languagesLocation) {
+				highlightEducation();
+			} else if($('.content').scrollTop() >= languagesLocation) {
+				highlightLanguages();
+			}
+		});
+	}
+
+	function highlightPurpose() {
 		$('.resume nav a').removeClass('current-nav-link');
 		$('#navPurpose').addClass('current-nav-link');
+	}
+
+	function highlightExperience() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navExperience').addClass('current-nav-link');
+	}
+
+	function highlightEducation() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navEducation').addClass('current-nav-link');
+	}
+
+	function highlightLanguages() {
+		$('.resume nav a').removeClass('current-nav-link');
+		$('#navLanguages').addClass('current-nav-link');
+	}
+
+	$('#main-content').on("click", "#navPurpose", function() {
+		highlightPurpose();
 
 		$(".content")
 		.animate(
-			// {scrollTop: 27}, 
 			{scrollTop: purposeLocation}, 			
 			1000
 		);
 	});	
 
 	$('#main-content').on("click", "#navExperience", function() {
-		$('.resume nav a').removeClass('current-nav-link');
-		$('#navExperience').addClass('current-nav-link');
+		highlightExperience();
 
 		$(".content")
 		.animate(
-			// {scrollTop: 439},
 			{scrollTop: experienceLocation},  
 			1000
 		);
 	});	
 
 	$('#main-content').on("click", "#navEducation", function() {
-		$('.resume nav a').removeClass('current-nav-link');
-		$('#navEducation').addClass('current-nav-link');
+		highlightEducation();
 
 		$(".content")
 		.animate(
-			// {scrollTop: 1954}, 
 			{scrollTop: educationLocation}, 
 			1000
 		);
@@ -246,12 +278,10 @@ $(document).ready(function(){
 
 
 	$('#main-content').on("click", "#navLanguages", function() {
-		$('.resume nav a').removeClass('current-nav-link');
-		$('#navLanguages').addClass('current-nav-link');
+		highlightLanguages();
 
 		$(".content")
 		.animate(
-			// {scrollTop: 2454}, 
 			{scrollTop: languagesLocation}, 
 			1000
 		);
