@@ -172,14 +172,23 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(400).slideDown();
+		$('#main-content').slideUp().delay(3000).slideDown();
 		setTimeout(function() {
 			$('#main-content').load('projects.html');
 		}, 400);
 
 		setTimeout(function() {
 			projectsSetup();
-		}, 1000);
+		}, 3600);
+
+		// $('#main-content').slideUp().delay(400).slideDown();
+		// setTimeout(function() {
+		// 	$('#main-content').load('projects.html');
+		// }, 400);
+
+		// setTimeout(function() {
+		// 	projectsSetup();
+		// }, 1000);
 
 		linkStyleClear();
 		$(this).addClass('margin-fix');
@@ -217,13 +226,13 @@ $(document).ready(function(){
 		highlightPurpose();
 
 		$('.content').on('scroll', function() {
-			if($('.content').scrollTop() >= purposeLocation -1 && $('.content').scrollTop() < experienceLocation -1) {
+			if($('.content').scrollTop() >= purposeLocation -50 && $('.content').scrollTop() < experienceLocation -50) {
 				highlightPurpose();				
-			} else if($('.content').scrollTop() >= experienceLocation -1 && $('.content').scrollTop() < educationLocation -1) {
+			} else if($('.content').scrollTop() >= experienceLocation -50 && $('.content').scrollTop() < educationLocation -50) {
 				highlightExperience();
-			} else if($('.content').scrollTop() >= educationLocation -1 && $('.content').scrollTop() < languagesLocation -1) {
+			} else if($('.content').scrollTop() >= educationLocation -50 && $('.content').scrollTop() < languagesLocation -50) {
 				highlightEducation();
-			} else if($('.content').scrollTop() >= languagesLocation -1) {
+			} else if($('.content').scrollTop() >= languagesLocation -50) {
 				highlightLanguages();
 			}
 		});
@@ -279,13 +288,13 @@ $(document).ready(function(){
 		highlightFeatured();
 
 		$('.content').on('scroll', function() {
-				if($('.content').scrollTop() >= featuredLocation -1 && $('.content').scrollTop() < personalLocation -1) {
+				if($('.content').scrollTop() >= featuredLocation -50 && $('.content').scrollTop() < personalLocation -50) {
 					highlightFeatured();
-				} else if($('.content').scrollTop() >= personalLocation -1 && $('.content').scrollTop() < thinkfulLocation -1) {
+				} else if($('.content').scrollTop() >= personalLocation -50 && $('.content').scrollTop() < thinkfulLocation -50) {
 					highlightPersonal();
-				} else if($('.content').scrollTop() >= thinkfulLocation -1 && $('.content').scrollTop() < freelanceLocation -1) {
+				} else if($('.content').scrollTop() >= thinkfulLocation -50 && $('.content').scrollTop() < freelanceLocation -50) {
 					highlightThinkful();
-				} else if($('.content').scrollTop() >= freelanceLocation -1) {
+				} else if($('.content').scrollTop() >= freelanceLocation -50) {
 					highlightFreelance();
 				}
 		});
