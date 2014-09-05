@@ -199,6 +199,7 @@ Main Content
 #main-content {
 	/*margin-top: 11%;*/
 	display: none;
+	height: 100%;
 }
 
 .content {
@@ -264,6 +265,7 @@ Resume
 	display: inline-block;
 	padding: 0em 0.25em;
 	width: 12%;
+	min-width: 149px;
 }
 
 .page h2 {
@@ -328,22 +330,18 @@ h3, .title, .dates {
 /*========================
 Projects
 ========================*/
+.page {
+	height: 100%;
+}
 
 .projects  nav {
-	/*width: 20%;
 	float: left;
 	font-size: 1.9em;
 	text-align: center;
-	padding: 3em 1.3em;
-	color: cadetblue;*/
-	/*test*/
-	width: 11%;
-	float: left;
-	font-size: 1.9em;
-	text-align: center;
-	/* padding: 3em 1.3em; */
 	color: cadetblue;
-	margin: 3em 1.8em;
+	position: relative;
+	top: 17%;
+	left: 6%;
 }
 
 .projects nav a {
