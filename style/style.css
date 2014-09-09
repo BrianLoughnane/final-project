@@ -108,7 +108,6 @@ header {
 	padding: 3% 5%;
 	border-bottom: 2px solid darkslategray;
 	border-bottom: 2px solid darkred;
-	/*position: fixed;*/
 	width: 100%;
 	display: none;
 	background: white;
@@ -136,15 +135,11 @@ header nav {
 header nav a {
 	margin-right: 3em;
 	font-size: 1.4em;
-	/*padding: 0px 5.7px;*/
-	/*padding: 0% 1.1%;*/
 	padding: 0em 0.281em;
 	margin-bottom: 2px;
 }
 
 header nav a:hover {
-	/*padding: 0px;*/
-	/*padding: 0%;*/
 	padding: 0em;
 }
 
@@ -197,13 +192,11 @@ Main Content
 ========================*/
 
 #main-content {
-	/*margin-top: 11%;*/
 	display: none;
 	height: 100%;
 }
 
 .content {
-	/*padding: 0% 12% 3% 12%;*/
 	font-size: 2em;
 	overflow-y: scroll;
 	height: 1000px;
@@ -343,9 +336,9 @@ h3, .title, .dates {
 /*========================
 Projects
 ========================*/
-/*.page {
+.page {
 	height: 100%;
-}*/
+}
 
 .projects  nav {
 	float: left;
@@ -386,7 +379,12 @@ Projects
 	margin-bottom: 34px;
 }
 
+.project a {
+	text-decoration: underline;
+}
+
 .project p {
+	margin-top: 0%;
 	margin-bottom: 7%;
 	text-align: justify;
 	color: cadetblue;
@@ -408,17 +406,6 @@ Projects
 	font-weight: bold;
 	margin-top: 5%;
 }
-
-/*.project a {
-	text-decoration: underline;
-	font-weight: bold;
-}
-*/
-/*.project a:hover {
-	font-weight: normal;
-}*/
-
-
 
 iframe {
 	width: 100%;
@@ -487,8 +474,6 @@ Contact Popup
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgba(165, 42, 42, 0.9);
-	background: rgba(95, 158, 160, 0.9);
 	background: rgba(49, 79, 79, 0.9);
 	z-index: -1;
 	opacity: 0;
@@ -498,11 +483,12 @@ Contact Popup
 	position: relative;
 	top: 16vh;
 	left: 25%;
-	background: white;
 	width: 50%;
 	height: 70%;
 	border-radius: 5px;
-	border: 20px solid darkred;
+	border: 4px solid darkred;
+	color: darkred;
+	background: rgba(255,255,255, 1);
 }
 
 #contact-popup-main i {
@@ -518,12 +504,11 @@ Contact Popup
 
 #contact-popup-main i:hover {
 	cursor: pointer;
-	color: darkred;
+	color: darkslategray;
 }
 
 #contact-popup-main span {
 	font-size: 2em;
-	color: darkred;
 	width: 100%;
 	height: 100%;
 	padding: 16% 0%;
@@ -531,7 +516,7 @@ Contact Popup
 }
 
 #contact-popup-main strong {
-	color: cadetblue;
+	color: darkslategray;
 } 
 
 /*========================
