@@ -11,6 +11,7 @@
 body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: darkslategray;
+	font-size: 100%;
 }
 
 span {
@@ -105,8 +106,9 @@ Header
 ========================*/
 
 header {
-	padding: 3% 5%;
-	border-bottom: 2px solid darkslategray;
+	/*padding: 3% 5%;*/
+	padding: 34px 57px;
+	/*border-bottom: 2px solid darkslategray;*/
 	border-bottom: 2px solid darkred;
 	width: 100%;
 	display: none;
@@ -126,10 +128,12 @@ header span strong {
 }
 
 header nav {
-	display: inline-block;
+	/*display: inline-block;*/
 	float: right;
-	vertical-align: top;
+	/*vertical-align: top;*/
+	/*margin-top: 20px;*/
 	margin-top: 7px;
+	/*min-width: 575px;*/
 }
 
 header nav a {
@@ -144,6 +148,10 @@ header nav a:hover {
 	padding: 0em;
 }
 
+.home-link {
+	float: left;
+}
+
 .contact-link {
 	text-decoration: none;
 	padding: 10px 25px;
@@ -153,6 +161,8 @@ header nav a:hover {
 	font-size: 1.4em;
 	border: 2px solid darkred;
 	color: darkred;
+	/*width: 245px;*/
+
 }
 
 .contact-link:hover {
@@ -572,35 +582,170 @@ Contact Popup
 Responsive Design
 ========================*/
 
-header {
-	height: 16.1vh;
+@media (min-width: 910px) {
+
+	header {
+		height: 16.1vh;
+	}
+
+	.content {
+		/*height: 83.9vh;*/
+		height: 74.9vh;
+	}
+
+	footer {
+		height: 9vh;
+	}
+
+	.resume .content {
+		height: 62.8vh;
+	}
+
+	.resume nav {
+		height: 12.1vh;
+	}
+
+	.projects .content {
+		/*width: something;*/
+	}
+
+	.projects nav {
+		/*width: somehting;*/
+	}
+
+	.contact-popup {
+		/*width: something;*/
+	}
+
 }
 
-.content {
-	height: 83.9vh;
-	height: 74.9vh;
+@media (max-width: 909px) and (min-width: 585px) {
+
+	header {
+		/*height: 29.1vh;*/
+		height: 22.1vh;
+		padding: 0%;
+		padding-left: 30%;
+		text-align: center;
+	}
+
+	header nav {
+		float: left;
+		clear: left;
+	}
+
+	.home-link {
+		display: inline-block;
+		margin-left: 3%;
+	}
+
+	.contact-link {
+		display: block;
+	}
+
+	header nav a {
+		margin: 0em 1em 1em 1em;
+	}
+
+	.content {
+		/*height: 67.9vh;*/
+		padding: 10%;
+		height: 79.9;
+	}
+
+	footer {
+		height: 9vh;
+	}
+
+/*	.resume .content {
+		height: 62.8vh;
+	}
+
+	.resume nav {
+		height: 12.1vh;
+	}
+
+	.projects .content {
+		
+	}
+
+	.projects nav {
+		
+	}
+
+	.contact-popup {
+		
+	}*/
+	
 }
 
-footer {
-	height: 9vh;
-}
+@media (max-width: 584px) {
+	
+	body {
+		font-size: 0.7em;
+	}
 
-.resume .content {
-	height: 62.8vh;
-}
+	header {
+		height: 20.1vh;
+		text-align: center;
+		padding: 0px 57px;
+	}
 
-.resume nav {
-	height: 12.1vh;
-}
+	header nav {
+		display: block;
+		text-align: center;
+		min-width: 0px;
+		float: none;
+	}
 
-.projects .content {
-	/*width: something;*/
-}
+	.home-link {
+		display: block;
+		float: none;
+	}
 
-.projects nav {
-	/*width: somehting;*/
-}
+	.contact-link {
+		display: block;
+		width: 99%;
+		/*width: 240px;*/
+		font-size: 1.3em;
+		float: none;
+	}
 
-.contact-popup {
-	/*width: something;*/
+	header nav a {
+		margin: 0em 1em 1em 1em;
+	}
+
+	.content {
+		height: 79.9vh;
+		padding: 10%;
+	}
+
+	footer {
+		height: 9vh;
+	}
+
+/*	footer {
+		display: none;
+	}*/
+
+/*	.resume .content {
+		height: 62.8vh;
+	}
+
+	.resume nav {
+		height: 12.1vh;
+	}
+
+	.projects .content {
+		
+	}
+
+	.projects nav {
+		
+	}
+
+	.contact-popup {
+		
+	}*/
+	
 }
