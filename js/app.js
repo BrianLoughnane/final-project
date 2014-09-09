@@ -210,21 +210,36 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content')
-		.slideUp(function() {
-			$('#main-content')
-			.load('contact.html', 
-				{
-					done: function() {
-						$('#main-content').delay(400).slideDown();
-					}
-				}
-			);	
-		});
+		// $('#main-content')
+		// .slideUp(function() {
+		// 	$('#main-content')
+		// 	.load('contact.html', 
+		// 		{
+		// 			done: function() {
+		// 				$('#main-content').delay(400).slideDown();
+		// 			}
+		// 		}
+		// 	);	
+		// });
 
-		linkStyleClear();
-		$(this).addClass('contact-link-selected');
+		// linkStyleClear();
+		// $(this).addClass('contact-link-selected');
+
+		$('#contact-popup')
+		.css('z-index', 100)
+		.animate({'opacity': 1}, 500);
+
 	});
+
+	$('.contact-close').on("click", function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#contact-popup')
+		.animate({'z-index': -1, 'opacity': 0}, 500);
+
+	});
+
 
 // ================================
 // Pages
@@ -363,46 +378,46 @@ $(document).ready(function(){
 // Contact
 // ================================	
 
-	$('#main-content').on("click", "#submit", function() {
+	// $('#main-content').on("click", "#submit", function() {
 
-		var message = $('#message').val();
+	// 	var message = $('#message').val();
 
-		var data = {
-			api_user: 'brianloughnane',
-			api_key: 'sgpw1232',
-			subject: "You've been contacted through your website",
-			text: message,
-			to: 'mrmusic87@gmail.com',
-			from: 'brian@brianloughnane.com',
-		};
+	// 	var data = {
+	// 		api_user: 'brianloughnane',
+	// 		api_key: 'sgpw1232',
+	// 		subject: "You've been contacted through your website",
+	// 		text: message,
+	// 		to: 'mrmusic87@gmail.com',
+	// 		from: 'brian@brianloughnane.com',
+	// 	};
 
-		var sendgrid = require("sendgrid")('brianloughnane', 'sgpw1232');
+	// 	var sendgrid = require("sendgrid")('brianloughnane', 'sgpw1232');
 
-		try {
-		    sendgrid.send(data, function(err, json) {
-		        if (err) return console.error(err);
-		        console.log(json);
-		    });
-		} catch(e) {
-		    console.log(e);
-		}
+	// 	try {
+	// 	    sendgrid.send(data, function(err, json) {
+	// 	        if (err) return console.error(err);
+	// 	        console.log(json);
+	// 	    });
+	// 	} catch(e) {
+	// 	    console.log(e);
+	// 	}
 		
 
 
 
-		$('#main-content')
-		.slideUp(function() {
-			$('#main-content')
-			.load('thank-you.html', 
-				{
-					done: function() {
-						$('#main-content').delay(400).slideDown();
-					}
-				}
-			);				
-		});
+	// 	$('#main-content')
+	// 	.slideUp(function() {
+	// 		$('#main-content')
+	// 		.load('thank-you.html', 
+	// 			{
+	// 				done: function() {
+	// 					$('#main-content').delay(400).slideDown();
+	// 				}
+	// 			}
+	// 		);				
+	// 	});
 
-	});	
+	// });	
 
 
 
