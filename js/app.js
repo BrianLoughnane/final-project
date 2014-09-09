@@ -135,7 +135,7 @@ $(document).ready(function(){
 		$('.contact-link').removeClass('contact-link-selected');
 	}
 
-	$('#home-link').on("click", function(e) {
+	$('.home-link').on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -175,8 +175,8 @@ $(document).ready(function(){
 		});
 
 		linkStyleClear();
-		$(this).addClass('margin-fix');
-		$(this).addClass('current-nav-link');
+		$('#main-resume-link').addClass('margin-fix');
+		$('#main-resume-link').addClass('current-nav-link');
 	});
 
 	$('.projects-link').on("click", function(e) {
@@ -204,9 +204,9 @@ $(document).ready(function(){
 		});
 
 		linkStyleClear();
-		$(this).addClass('margin-fix');
-		$('.resume-link').addClass('margin-fix');
-		$(this).addClass('current-nav-link');
+		$("#main-projects-link").addClass('margin-fix');
+		$("#main-resume-link").addClass('margin-fix');
+		$("#main-projects-link").addClass('current-nav-link');
 	});
 
 
