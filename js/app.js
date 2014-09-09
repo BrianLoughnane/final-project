@@ -82,8 +82,6 @@ $(document).ready(function(){
 		
 	}	
 
-
-
 	function introRoll() {
 		if (introFadeCounter < $('#introFades span').length) {
 			introFade(introFadeCounter);	
@@ -151,13 +149,7 @@ $(document).ready(function(){
 					}
 				}
 			);
-				
 		});
-
-		// $('#main-content').slideUp().delay(400).slideDown();
-		// setTimeout(function() {
-		// 	$('#main-content').load('about.html');
-		// }, 400);
 
 		linkStyleClear();
 	});
@@ -180,18 +172,7 @@ $(document).ready(function(){
 					}
 				}
 			);
-				
 		});
-
-		// $('#main-content').slideUp().delay(400).slideDown();
-		
-		// setTimeout(function() {
-		// 	$('#main-content').load('resume.html');
-		// }, 400);
-
-		// setTimeout(function() {
-		// 	resumeSetup();
-		// }, 1000);
 
 		linkStyleClear();
 		$(this).addClass('margin-fix');
@@ -201,9 +182,6 @@ $(document).ready(function(){
 	$('#projects-link').on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-
-
-		// v3
 		
 		$('#main-content')
 		.slideUp(function() {
@@ -218,45 +196,8 @@ $(document).ready(function(){
 						});
 					}
 				}
-			);
-				
+			);	
 		});
-		
-
-
-		// v2
-
-		// $('#main-content')
-		// .slideUp(function() {
-		// 	$('#main-content').load('projects.html');
-		// })
-		// .delay(3000)
-		// .slideDown(function() {projectsSetup();});
-
-
-		// v1
-
-		// $('#main-content').slideUp().delay(3000).slideDown();
-		// setTimeout(function() {
-		// 	$('#main-content').load('projects.html');
-		// }, 400);
-
-		// setTimeout(function() {
-		// 	projectsSetup();
-		// }, 3600);
-
-
-
-
-
-		// $('#main-content').slideUp().delay(400).slideDown();
-		// setTimeout(function() {
-		// 	$('#main-content').load('projects.html');
-		// }, 400);
-
-		// setTimeout(function() {
-		// 	projectsSetup();
-		// }, 1000);
 
 		linkStyleClear();
 		$(this).addClass('margin-fix');
@@ -264,14 +205,22 @@ $(document).ready(function(){
 		$(this).addClass('current-nav-link');
 	});
 
+
 	$('.contact-link').on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#main-content').slideUp().delay(400).slideDown();
-		setTimeout(function() {
-			$('#main-content').load('contact.html');
-		}, 400);
+		$('#main-content')
+		.slideUp(function() {
+			$('#main-content')
+			.load('contact.html', 
+				{
+					done: function() {
+						$('#main-content').delay(400).slideDown();
+					}
+				}
+			);	
+		});
 
 		linkStyleClear();
 		$(this).addClass('contact-link-selected');
@@ -410,18 +359,52 @@ $(document).ready(function(){
 		scrollTo(freelanceLocation);
 	});	
 
+// ================================
+// Contact
+// ================================	
+
 	$('#main-content').on("click", "#submit", function() {
 
-		$('#main-content').slideUp().delay(400).slideDown();
-		
-		setTimeout(function() {
-			$('#main-content').load('thank-you.html');
-		}, 400);
+		var message = $('#message').val();
 
-		// setTimeout(function() {
-		// 	resumeSetup();
-		// }, 1000);
+		var data = {
+			api_user: 'brianloughnane',
+			api_key: 'sgpw1232',
+			subject: "You've been contacted through your website",
+			text: message,
+			to: 'mrmusic87@gmail.com',
+			from: 'brian@brianloughnane.com',
+		};
+
+		var sendgrid = require("sendgrid")('brianloughnane', 'sgpw1232');
+
+		try {
+		    sendgrid.send(data, function(err, json) {
+		        if (err) return console.error(err);
+		        console.log(json);
+		    });
+		} catch(e) {
+		    console.log(e);
+		}
+		
+
+
+
+		$('#main-content')
+		.slideUp(function() {
+			$('#main-content')
+			.load('thank-you.html', 
+				{
+					done: function() {
+						$('#main-content').delay(400).slideDown();
+					}
+				}
+			);				
+		});
+
 	});	
+
+
 
 
 }); //end on ready
