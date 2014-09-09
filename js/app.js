@@ -131,7 +131,7 @@ $(document).ready(function(){
 // ================================
 
 	function linkStyleClear() {
-		$('header nav a').removeClass('current-nav-link').removeClass('current-nav-link-alt').removeClass('margin-fix');
+		$('nav a').removeClass('current-nav-link').removeClass('current-nav-link-alt').removeClass('margin-fix');
 		$('.contact-link').removeClass('contact-link-selected');
 	}
 
@@ -154,7 +154,7 @@ $(document).ready(function(){
 		linkStyleClear();
 	});
 
-	$('#resume-link').on("click", function(e) {
+	$('.resume-link').on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -179,7 +179,7 @@ $(document).ready(function(){
 		$(this).addClass('current-nav-link');
 	});
 
-	$('#projects-link').on("click", function(e) {
+	$('.projects-link').on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
@@ -190,10 +190,14 @@ $(document).ready(function(){
 				{
 					done: function() {
 						$('#main-content')
-						.delay(3000)
+						.delay(400)
 						.slideDown(function() {
 							projectsSetup();
 						});
+						// .delay(3000)
+						// .slideDown(function() {
+						// 	projectsSetup();
+						// });
 					}
 				}
 			);	
@@ -201,7 +205,7 @@ $(document).ready(function(){
 
 		linkStyleClear();
 		$(this).addClass('margin-fix');
-		$('#resume-link').addClass('margin-fix');
+		$('.resume-link').addClass('margin-fix');
 		$(this).addClass('current-nav-link');
 	});
 
@@ -227,7 +231,7 @@ $(document).ready(function(){
 
 		$('#contact-popup')
 		.css('z-index', 100)
-		.animate({'opacity': 1}, 500);
+		.animate({'opacity': 1}, 400);
 
 	});
 
@@ -236,7 +240,7 @@ $(document).ready(function(){
 		e.stopPropagation();
 
 		$('#contact-popup')
-		.animate({'z-index': -1, 'opacity': 0}, 500);
+		.animate({'z-index': -1, 'opacity': 0}, 400);
 
 	});
 

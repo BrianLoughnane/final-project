@@ -137,6 +137,7 @@ header nav a {
 	font-size: 1.4em;
 	padding: 0em 0.281em;
 	margin-bottom: 2px;
+	vertical-align: middle;
 }
 
 header nav a:hover {
@@ -146,7 +147,6 @@ header nav a:hover {
 .contact-link {
 	text-decoration: none;
 	padding: 10px 25px;
-	border-radius: 13px;
 	font-weight: bold;
 	margin: 2px;
 	display: inline-block;
@@ -188,6 +188,42 @@ header .current-nav-link {
 }
 
 /*========================
+Footer
+========================*/
+
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	border-top: 2px solid darkred;
+	padding: 1.4% 5%;
+}
+
+footer span {
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: 300;
+	margin-top: 0.8vh;
+	color: darkred;
+}
+
+footer strong {
+	color: darkslategray;
+}
+
+footer nav {
+	display: inline-block;
+	float: right;
+	vertical-align: top;
+	margin-top: 0.7vh;
+}
+
+footer nav a {
+	margin-left: 2em;
+	font-size: 1.1em;
+}
+
+/*========================
 Main Content
 ========================*/
 
@@ -217,6 +253,7 @@ Main Content
 	-o-transition-duration: 1s;
 	-ms-transition-duration: 1s;
 	transition-duration: 1s;
+	text-decoration: underline;
 }
 
 .content blockquote {
@@ -256,8 +293,6 @@ blockquote span {
 Resume
 ========================*/
 
-
-
 .resume nav {
 	text-align: center;
 	padding: 2em 1.3em;
@@ -274,9 +309,15 @@ Resume
 	min-width: 149px;
 }
 
+.resume section {
+	min-height: 62.8vh;
+	/*margin-bottom: 5%;*/
+}
+
 .page h2 {
 	text-align: center;
 	padding-bottom: 2%;
+	margin-top: 1%;
 }
 
 #purpose p {
@@ -377,10 +418,6 @@ Projects
 .project {
 	border-bottom: 1px solid darkgray;
 	margin-bottom: 34px;
-}
-
-.project a {
-	text-decoration: underline;
 }
 
 .project p {
@@ -485,7 +522,6 @@ Contact Popup
 	left: 25%;
 	width: 50%;
 	height: 70%;
-	border-radius: 5px;
 	border: 4px solid darkred;
 	color: darkred;
 	background: rgba(255,255,255, 1);
@@ -529,10 +565,15 @@ header {
 
 .content {
 	height: 83.9vh;
+	height: 74.9vh;
+}
+
+footer {
+	height: 9vh;
 }
 
 .resume .content {
-	height: 71.8vh;
+	height: 62.8vh;
 }
 
 .resume nav {
