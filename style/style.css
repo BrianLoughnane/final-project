@@ -178,9 +178,9 @@ header .current-nav-link {
 	padding: 0em 0.281em;
 }
 
-/*.margin-fix {
+.margin-fix {
 	margin-right: 2.719em;
-}*/
+}
 
 .contact-link-selected {
 	color: darkred;
@@ -402,9 +402,9 @@ Projects
 	border-bottom: 2px solid;	
 }
 
-/*.projects nav a.margin-fix-p {
+.projects nav a.margin-fix-p {
 	margin-bottom: 1.95em;
-}*/
+}
 
 .projects .content {
 	width: 80%;

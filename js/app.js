@@ -131,7 +131,7 @@ $(document).ready(function(){
 // ================================
 
 	function linkStyleClear() {
-		$('nav a').removeClass('current-nav-link').removeClass('current-nav-link-alt');
+		$('nav a').removeClass('current-nav-link').removeClass('current-nav-link-alt').removeClass('margin-fix');
 		$('.contact-link').removeClass('contact-link-selected');
 	}
 
@@ -175,7 +175,7 @@ $(document).ready(function(){
 		});
 
 		linkStyleClear();
-		// $(this).addClass('margin-fix');
+		$(this).addClass('margin-fix');
 		$(this).addClass('current-nav-link');
 	});
 
@@ -204,8 +204,8 @@ $(document).ready(function(){
 		});
 
 		linkStyleClear();
-		// $(this).addClass('margin-fix');
-		// $('.resume-link').addClass('margin-fix');
+		$(this).addClass('margin-fix');
+		$('.resume-link').addClass('margin-fix');
 		$(this).addClass('current-nav-link');
 	});
 
