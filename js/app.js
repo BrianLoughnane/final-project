@@ -1,15 +1,38 @@
 $(document).ready(function(){
 
 // ================================
-// global variable declarations
+// Sizing
+// ================================
+
+	function sizing() {
+		var viewportWidth = $(window).width();
+		var viewportHeight = $(window).height();
+		var headerFooterHeight;		
+		var resumeNavHeight;
+
+		if (viewportWidth >= 992) {
+			resumeNavHeight = 109;
+			headerFooterHeight = 226;
+		}
+
+		var contentHeight = viewportHeight - headerFooterHeight;
+		var resumeContentHeight = contentHeight - resumeNavHeight;
+
+		$('.content').css('height', contentHeight);
+		$('.resume .content').css('height', resumeContentHeight);
+	} //end sizing function
+
+	$(window).resize(function() {
+		sizing();
+	});	
+
+
+// ================================
+// Intro
 // ================================
 
 	var introFadeCounter = 1;
 	var introExplodeCounter = 1;
-
-// ================================
-// function declarations
-// ================================
 
 	function playExplosion() {
 		$('#explosionSound')[0].volume = 1;
@@ -77,7 +100,7 @@ $(document).ready(function(){
 		}, 1000);
 
 		setTimeout(function() {
-			$('#main-content').slideDown();
+			$('#main-content').slideDown(function() {sizing();});
 		}, 1500);
 		
 	}	
@@ -145,7 +168,7 @@ $(document).ready(function(){
 			.load('about.html', 
 				{
 					done: function() {
-						$('#main-content').delay(400).slideDown();
+						$('#main-content').delay(400).slideDown(function() {sizing();});
 					}
 				}
 			);
@@ -167,6 +190,7 @@ $(document).ready(function(){
 						$('#main-content')
 						.delay(400)
 						.slideDown(function() {
+							sizing();
 							resumeSetup();
 						});
 					}
@@ -192,6 +216,7 @@ $(document).ready(function(){
 						$('#main-content')
 						.delay(400)
 						.slideDown(function() {
+							sizing();
 							projectsSetup();
 						});
 						// .delay(3000)

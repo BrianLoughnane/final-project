@@ -133,7 +133,7 @@ header nav {
 	/*vertical-align: top;*/
 	/*margin-top: 20px;*/
 	margin-top: 7px;
-	/*min-width: 575px;*/
+	min-width: 202px;
 }
 
 header nav a {
@@ -177,7 +177,6 @@ header nav a:hover {
 .current-nav-link {
 	font-weight: bold;
 	border-bottom: 2px solid;
-	margin-bottom: 0px;
 }
 
 header .current-nav-link {
@@ -206,7 +205,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	border-top: 2px solid darkred;
-	padding: 1.4% 5%;
+	padding: 20px 57px;
 	background: rgb(250, 250, 250);
 }
 
@@ -225,8 +224,7 @@ footer strong {
 footer nav {
 	display: inline-block;
 	float: right;
-	vertical-align: top;
-	margin-top: 0.7vh;
+	margin-top: 8px;
 }
 
 footer nav a {
@@ -256,7 +254,7 @@ Main Content
 	font-size: 2em;
 	overflow-y: scroll;
 	height: 1000px;
-	padding: 0% 22%;
+	padding: 0px 282px;
 	color: darkred;
 	position: relative;
 	top: 0;
@@ -319,11 +317,17 @@ Resume
 	padding: 2em 1.3em;
 	border-bottom: 2px solid darkslategray;
 	color: cadetblue;
+	height: 109px;
+}
+
+#resume-nav-right {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .resume nav a {
 	font-size: 1.9em;
-	margin: 0em 2.6em;
+	margin: 0em 1.6em;
 	display: inline-block;
 	padding: 0em 0.25em;
 	width: 12%;
@@ -582,50 +586,45 @@ Contact Popup
 Responsive Design
 ========================*/
 
-@media (min-width: 910px) {
+header {
+	height: 145px;
+}
 
+footer {
+	height: 81px;
+}
+
+
+@media (min-width: 1200px) {
+	
 	header {
-		height: 16.1vh;
-	}
-
-	.content {
-		/*height: 83.9vh;*/
-		height: 74.9vh;
+		height: 145px;
 	}
 
 	footer {
-		height: 9vh;
+		height: 81px;
 	}
 
-	.resume .content {
-		height: 62.8vh;
-	}
-
-	.resume nav {
-		height: 12.1vh;
-	}
-
-	.projects .content {
-		/*width: something;*/
-	}
-
-	.projects nav {
-		/*width: somehting;*/
-	}
-
-	.contact-popup {
-		/*width: something;*/
+	.content {
+		padding: 0px 282px;
 	}
 
 }
 
-@media (max-width: 909px) and (min-width: 585px) {
+@media (min-width: 863px) and (max-width: 1199px) {
+
+	.content {
+		padding: 0px 197px;
+	}
+
+}
+
+@media (min-width: 585px) and (max-width: 862px) {
 
 	header {
-		/*height: 29.1vh;*/
+		height: 29.1vh;
 		height: 22.1vh;
-		padding: 0%;
-		padding-left: 30%;
+		padding: 0% 34.4%;
 		text-align: center;
 	}
 
@@ -636,7 +635,7 @@ Responsive Design
 
 	.home-link {
 		display: inline-block;
-		margin-left: 3%;
+		margin-left: 16px;
 	}
 
 	.contact-link {
@@ -653,9 +652,14 @@ Responsive Design
 		height: 79.9;
 	}
 
-	footer {
-		height: 9vh;
+	.resume nav a {
+		margin: 0em 0.7em;
 	}
+
+
+	/*footer {
+		height: 9vh;
+	}*/
 
 /*	.resume .content {
 		height: 62.8vh;
@@ -694,11 +698,10 @@ Responsive Design
 	header nav {
 		display: block;
 		text-align: center;
-		min-width: 0px;
 		float: none;
 	}
 
-	.home-link {
+	header .home-link {
 		display: block;
 		float: none;
 	}
@@ -714,15 +717,24 @@ Responsive Design
 	header nav a {
 		margin: 0em 1em 1em 1em;
 	}
+	
+	footer {
+		padding: 20px 24px;
+	}
 
 	.content {
 		height: 79.9vh;
 		padding: 10%;
 	}
 
-	footer {
-		height: 9vh;
+	.resume nav a {
+		margin: 0px;
+		min-width: 119px;
 	}
+
+/*	footer {
+		height: 9vh;
+	}*/
 
 /*	footer {
 		display: none;
