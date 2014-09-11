@@ -408,23 +408,23 @@ Projects
 	left: 5.2%;
 	width: 125px;*/
 	width: 20%;
-	padding-top: 100px;
+	padding-top: 30px;
+}
+
+.projects nav span {
+	display: block;
+	margin: 50px 0px;
 }
 
 .projects nav a {
 	display: inline-block;
-	margin-bottom: 0em;
-	margin: 8%;
+	/*margin-bottom: 0em;*/
 }
 
 .current-nav-link-p {
 	font-weight: bold;
 	border-bottom: 2px solid;	
 }
-
-/*.projects nav a.margin-fix-p {
-	margin-bottom: 0.95em;
-}*/
 
 .projects .content {
 	width: 80%;
@@ -685,10 +685,6 @@ footer {
 	.projects .content {
 		padding: 0% 6%;
 	}
-
-	.projects nav a {
-		margin: 1em 0.1em;
-	}
 }
 
 @media (max-width: 584px) {
@@ -775,6 +771,13 @@ footer {
 
 }
 
+@media (max-height: 700px) {
+
+	.projects nav span {
+		margin: 20px 0px;
+	}
+
+}
 
 @media (max-height: 550px) {
 	
@@ -784,10 +787,6 @@ footer {
 
 	footer {
 		display: none;
-	}
-
-	.resume nav {
-		height: 69px;
 	}
 
 	#contact-popup-main {
@@ -801,9 +800,35 @@ footer {
 
 }
 
-@media (max-height: 550px) and (min-width: 500px) {
+@media (max-height: 425px) {
+	
+	.projects nav {
+		padding-top: 0px;
+	}
+
+	.projects nav span {
+		margin: 0px;
+	}
+
+}
+
+@media (max-height: 550px) and (min-width: 585px) {
 
 	#contact-popup-main div {
 		padding: 10px 100px;
+	}
+
+	header {
+		padding:  4px 57px;
+		height: 56px;
+	}
+
+	header nav {
+		margin-top: 0px;
+	}
+
+	.resume nav {
+		padding: 5px;
+		height: 36px;
 	}
 }

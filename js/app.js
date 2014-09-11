@@ -29,8 +29,8 @@ $(document).ready(function(){
 		} 
 
 		if (viewportHeight < 550 ) {
-			headerFooterHeight -= 81;
-			resumeNavHeight -= 30;
+			headerFooterHeight -= 161;
+			resumeNavHeight -= 69;
 		}
 
 		var contentHeight = viewportHeight - headerFooterHeight;
@@ -407,23 +407,23 @@ $(document).ready(function(){
 	}	
 
 	function highlightFeatured() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navFeatured').addClass('current-nav-link-p').addClass('margin-fix-p');
+		$('.projects nav a').removeClass('current-nav-link-p');
+		$('#navFeatured').addClass('current-nav-link-p');
 	}
 
 	function highlightPersonal() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navPersonal').addClass('current-nav-link-p').addClass('margin-fix-p');
+		$('.projects nav a').removeClass('current-nav-link-p');
+		$('#navPersonal').addClass('current-nav-link-p');
 	}
 
 	function highlightThinkful() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navThinkful').addClass('current-nav-link-p').addClass('margin-fix-p');
+		$('.projects nav a').removeClass('current-nav-link-p');
+		$('#navThinkful').addClass('current-nav-link-p');
 	}
 
 	function highlightFreelance() {
-		$('.projects nav a').removeClass('current-nav-link-p').removeClass('margin-fix-p');
-		$('#navFreelance').addClass('current-nav-link-p').addClass('margin-fix-p');
+		$('.projects nav a').removeClass('current-nav-link-p');
+		$('#navFreelance').addClass('current-nav-link-p');
 	}
 
 	$('#main-content').on("click", "#navFeatured", function() {
