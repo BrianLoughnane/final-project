@@ -117,7 +117,7 @@ header span {
 	display: inline-block;
 	font-size: 2em;
 	font-weight: 300;
-	margin-top: 0.4em;
+/*	margin-top: 10px;*/
 	color: darkred;
 }
 
@@ -130,7 +130,7 @@ header nav {
 	float: right;
 	/*vertical-align: top;*/
 	/*margin-top: 20px;*/
-	margin-top: 7px;
+	/*margin-top: 7px;*/
 	min-width: 202px;
 }
 
@@ -148,6 +148,7 @@ header nav a:hover {
 
 .home-link {
 	float: left;
+	margin-top: 6px;
 }
 
 .contact-link {
@@ -604,15 +605,15 @@ Responsive Design
 ========================*/
 
 header {
-	height: 136px;
+	/*height: 136px;*/
 }
 
 footer {
-	height: 81px;
+	/*height: 81px;*/
 }
 
 .resume nav {
-	height: 99px;
+	/*height: 99px;*/
 }
 
 @media (min-width: 1200px) {
@@ -623,7 +624,7 @@ footer {
 	}
 
 	.resume nav {
-		height: 109px;
+		/*height: 109px;*/
 	}
 
 }
@@ -653,15 +654,15 @@ footer {
 @media (min-width: 585px) and (max-width: 862px) {
 
 	header {
-		height: 98px;
+		/*height: 98px;*/
 		padding: 14px 39px;
 		text-align: center;
 		font-size: 0.7em;
 	}
-	
-	header nav {
+
+/*	header nav {
 		margin-top: 6px;
-	}
+	}*/
 
 	header nav a {
 		margin: 0em 1em;
@@ -673,7 +674,7 @@ footer {
 
 	.resume nav {
 		padding: 20px 0px;
-		height: 76px;
+		/*height: 76px;*/
 	}
 
 	.resume nav a {
@@ -694,9 +695,9 @@ footer {
 	}
 
 	header {
-		height: 152px;
+		/*height: 152px;*/
 		text-align: center;
-		padding: 0px;
+		padding: 10px 0px;
 	}
 
 	header nav {
@@ -731,12 +732,12 @@ footer {
 	}
 
 	.content {
-		height: 79.9vh;
+		/*height: 79.9vh;*/
 		padding: 0px 10%;
 	}
 
 	.resume nav {
-		height: 76px;
+		/*height: 76px;*/
 		padding: 15px;
 	}
 
@@ -788,16 +789,17 @@ footer {
 	}
 }
 
-@media (max-height: 700px) and (min-width: 550px){
+/*@media (max-height: 700px) and (min-width: 585px){*/
+@media (max-height: 700px) and (min-width: 550px) {
 
 	header {
-		padding: 14px 57px;
-		height: 90px
+		padding: 14px 40px;
+		/*height: 90px*/
 	}
 
 	.resume nav {
 		padding: 10px 0px;
-		height: 65px;
+		/*height: 65px;*/
 	}
 }
 
@@ -842,15 +844,15 @@ footer {
 
 	header {
 		padding:  4px 57px;
-		height: 56px;
+		/*height: 56px;*/
 	}
 
-	header nav {
+/*	header nav {
 		margin-top: 0px;
-	}
+	}*/
 
 	.resume nav {
 		padding: 5px;
-		height: 36px;
+		/*height: 36px;*/
 	}
 }
