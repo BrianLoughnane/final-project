@@ -10,20 +10,33 @@ $(document).ready(function(){
 		var headerFooterHeight;		
 		var resumeNavHeight;
 
-		if (viewportWidth >= 992) {
+		if (viewportWidth >= 1200 ) {
+			headerFooterHeight = 217;
 			resumeNavHeight = 109;
-			headerFooterHeight = 226;
-		}
+		} else if (viewportWidth >= 862 && viewportHeight < 1200) {
+			headerFooterHeight = 217;
+			resumeNavHeight = 99;
+		} else if (viewportWidth >= 585 && viewportWidth < 862) {
+			headerFooterHeight = 254;
+			resumeNavHeight = 76;
+		} else {
+			headerFooterHeight = 233;
+			resumeNavHeight = 76;
+		} 
 
 		var contentHeight = viewportHeight - headerFooterHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
 
 		$('.content').css('height', contentHeight);
 		$('.resume .content').css('height', resumeContentHeight);
+		$('.resume section').css('min-height', resumeContentHeight);
 	} //end sizing function
 
 	$(window).resize(function() {
 		sizing();
+		sectionPositioning();
+		
+
 	});	
 
 
@@ -278,15 +291,29 @@ $(document).ready(function(){
 		$(".content").animate({scrollTop: location}, 1000);
 	}
 
+	function sectionPositioning() {
+		if($('#purpose').position() !== undefined) {
+			resumeSectionPositioning();
+			console.log('resume positioning fired');
+		} else if ($('#featured').position() !== undefined) {
+			projectSectionPositioning();
+			console.log('projects positioning fired');
+		}
+	}
+
 // ================================
 // Resume
 // ================================	
 
-	function resumeSetup() {
+	function resumeSectionPositioning() {
 		purposeLocation = $('#purpose').position().top;
 		experienceLocation = $('#experience').position().top;
 		educationLocation = $('#education').position().top;
 		languagesLocation = $('#languages').position().top;
+	}
+
+	function resumeSetup() {
+		resumeSectionPositioning();
 
 		highlightPurpose();
 
@@ -344,11 +371,15 @@ $(document).ready(function(){
 // Projects 
 // ================================	
 
-	function projectsSetup() {
+	function projectSectionPositioning() {
 		featuredLocation = $('#featured').position().top;
 		personalLocation = $('#personal').position().top;
 		thinkfulLocation = $('#thinkful').position().top ;
 		freelanceLocation = $('#freelance').position().top ;
+	}
+
+	function projectsSetup() {
+		projectSectionPositioning();
 
 		highlightFeatured();
 

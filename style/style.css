@@ -106,9 +106,7 @@ Header
 ========================*/
 
 header {
-	/*padding: 3% 5%;*/
 	padding: 34px 57px;
-	/*border-bottom: 2px solid darkslategray;*/
 	border-bottom: 2px solid darkred;
 	width: 100%;
 	display: none;
@@ -242,7 +240,6 @@ Main Content
 
 #content-container {
 	background: url('../media/sky-lake.jpg');
-	height: 74.9vh;
 }
 
 #main-content {
@@ -317,7 +314,6 @@ Resume
 	padding: 2em 1.3em;
 	border-bottom: 2px solid darkslategray;
 	color: cadetblue;
-	height: 109px;
 }
 
 #resume-nav-right {
@@ -335,7 +331,7 @@ Resume
 }
 
 .resume section {
-	min-height: 62.8vh;
+	/*min-height: 62.8vh;*/
 	/*margin-bottom: 5%;*/
 }
 
@@ -587,28 +583,37 @@ Responsive Design
 ========================*/
 
 header {
-	height: 145px;
+	height: 136px;
 }
 
 footer {
 	height: 81px;
 }
 
+.resume nav {
+	height: 99px;
+}
 
 @media (min-width: 1200px) {
 	
-	header {
-		height: 145px;
-	}
-
-	footer {
-		height: 81px;
-	}
-
 	.content {
 		padding: 0px 282px;
 	}
 
+	.resume nav {
+		height: 109px;
+	}
+
+}
+
+@media (max-width: 1199px) {
+	.resume nav a {
+		font-size: 1.4em;
+	}
+
+	header nav a, header .current-nav-link {
+		margin-right: 0.8em;
+	}
 }
 
 @media (min-width: 863px) and (max-width: 1199px) {
@@ -617,25 +622,33 @@ footer {
 		padding: 0px 197px;
 	}
 
+	.resume nav a {
+		margin: 0em 0.8em;
+	}
+
 }
+
 
 @media (min-width: 585px) and (max-width: 862px) {
 
 	header {
-		height: 29.1vh;
-		height: 22.1vh;
-		padding: 0% 34.4%;
+		height: 177px;
+		padding: 0px;
 		text-align: center;
+	}
+	
+	.container {
+		display: inline-block;
 	}
 
 	header nav {
-		float: left;
-		clear: left;
+		margin-top: 0px;
 	}
 
-	.home-link {
-		display: inline-block;
-		margin-left: 16px;
+	header .home-link {
+		display: block;
+		float: none;
+		/*margin-left: 16px;*/
 	}
 
 	.contact-link {
@@ -643,43 +656,25 @@ footer {
 	}
 
 	header nav a {
-		margin: 0em 1em 1em 1em;
+		margin: 0em 1em 0.5em 1em;
 	}
 
 	.content {
 		/*height: 67.9vh;*/
-		padding: 10%;
-		height: 79.9;
+		padding: 0px 86px;
+		/*height: 79.9;*/
+	}
+
+	.resume nav {
+		padding: 20px 0px;
+		height: 76px;
 	}
 
 	.resume nav a {
 		margin: 0em 0.7em;
+		margin: 0em;
+		min-width: 126px;
 	}
-
-
-	/*footer {
-		height: 9vh;
-	}*/
-
-/*	.resume .content {
-		height: 62.8vh;
-	}
-
-	.resume nav {
-		height: 12.1vh;
-	}
-
-	.projects .content {
-		
-	}
-
-	.projects nav {
-		
-	}
-
-	.contact-popup {
-		
-	}*/
 	
 }
 
@@ -690,9 +685,13 @@ footer {
 	}
 
 	header {
-		height: 20.1vh;
+		height: 152px;
 		text-align: center;
-		padding: 0px 57px;
+		padding: 0px;
+	}
+
+	.container {
+		display: inline-block;
 	}
 
 	header nav {
@@ -724,7 +723,16 @@ footer {
 
 	.content {
 		height: 79.9vh;
-		padding: 10%;
+		padding: 0px 10%;
+	}
+
+	.resume nav {
+		height: 76px;
+		padding: 15px;
+	}
+
+	#resume-nav-right {
+		display: block;
 	}
 
 	.resume nav a {
