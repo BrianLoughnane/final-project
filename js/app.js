@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	$(document).on('scroll', '.content', function() {
+		console.log('scroll');
+	});
+
 // ================================
 // Sizing
 // ================================
@@ -26,11 +30,13 @@ $(document).ready(function(){
 
 		if (viewportHeight < 550 ) {
 			headerFooterHeight -= 81;
+			resumeNavHeight -= 30;
 		}
 
 		var contentHeight = viewportHeight - headerFooterHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
 
+		$('#content-container').css('height', contentHeight);
 		$('.content').css('height', contentHeight);
 		$('.resume .content').css('height', resumeContentHeight);
 		$('.resume section').css('min-height', resumeContentHeight);

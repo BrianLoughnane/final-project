@@ -403,15 +403,18 @@ Projects
 	font-size: 1.9em;
 	text-align: center;
 	color: cadetblue;
-	position: relative;
+	/*position: relative;
 	top: 17%;
 	left: 5.2%;
-	width: 125px;
+	width: 125px;*/
+	width: 20%;
+	padding-top: 100px;
 }
 
 .projects nav a {
-	display: block;
-	margin-bottom: 2em;
+	display: inline-block;
+	margin-bottom: 0em;
+	margin: 8%;
 }
 
 .current-nav-link-p {
@@ -419,9 +422,9 @@ Projects
 	border-bottom: 2px solid;	
 }
 
-.projects nav a.margin-fix-p {
-	margin-bottom: 1.95em;
-}
+/*.projects nav a.margin-fix-p {
+	margin-bottom: 0.95em;
+}*/
 
 .projects .content {
 	width: 80%;
@@ -532,25 +535,29 @@ Contact Popup
 	background: rgba(8, 19, 39, 0.7);
 	z-index: -1;
 	opacity: 0;
+	overflow-y: auto;
+	text-align: center;
 }
 
 #contact-popup-main {
 	position: relative;
 	top: 16vh;
-	left: 25%;
-	width: 50%;
-	height: 70%;
+	/*left: 25%;*/
+	/*width: 50%;*/
+	/*height: 70%;*/
 	border: 4px solid darkred;
 	border: 4px solid rgb(45, 46, 46);
 	color: darkred;
 	background: rgba(255,255,255, 1);
+	/*min-height: 528px;*/
+	display: inline-block;
 }
 
 #contact-popup-main i {
 	position: absolute;
 	top: 0;
 	right: 0;
-	height: 8%;
+	height: 100%;
 	width: 13%;
 	font-size: 3em;
 	text-align: center;
@@ -562,16 +569,34 @@ Contact Popup
 	color: darkslategray;
 }
 
-#contact-popup-main span {
+#contact-popup-main div {
 	font-size: 2em;
-	width: 100%;
-	height: 100%;
-	padding: 16% 0%;
-	text-align: center;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*padding: 16% 0%;*/
+	/*padding: 101px 69px;*/
+	padding: 101px 11%;
+	padding: 30px 150px;
+	/*text-align: left;*/
+}
+
+#contact-popup-main span {
+	display: block;
+	margin: 15px 0px;
 }
 
 #contact-popup-main strong {
 	color: darkslategray;
+	/*float: left;*/
+	/*text-decoration: overline;*/
+	font-style: italic;
+} 
+
+#contact-popup-main a {
+	/*float: left;*/
+	/*clear: both;*/
+	display: block;
+	text-decoration: underline;
 } 
 
 /*========================
@@ -625,7 +650,6 @@ footer {
 
 }
 
-
 @media (min-width: 585px) and (max-width: 862px) {
 
 	header {
@@ -635,32 +659,16 @@ footer {
 		font-size: 0.7em;
 	}
 	
-/*	.container {
-		display: inline-block;
-	}
-*/
 	header nav {
 		margin-top: 6px;
 	}
-
-/*	header .home-link {
-		display: block;
-		float: none;
-	}
-
-	.contact-link {
-		display: block;
-	}*/
 
 	header nav a {
 		margin: 0em 1em;
 	}
 
 	.content {
-		/*height: 67.9vh;*/
-		/*padding: 0px 86px;*/
 		padding: 0% 11%;
-		/*height: 79.9;*/
 	}
 
 	.resume nav {
@@ -674,6 +682,13 @@ footer {
 		min-width: 126px;
 	}
 	
+	.projects .content {
+		padding: 0% 6%;
+	}
+
+	.projects nav a {
+		margin: 1em 0.1em;
+	}
 }
 
 @media (max-width: 584px) {
@@ -688,14 +703,14 @@ footer {
 		padding: 0px;
 	}
 
-	.container {
-		display: inline-block;
-	}
-
 	header nav {
 		display: block;
 		text-align: center;
 		float: none;
+	}
+
+	header nav a {
+		margin: 0em 1em 1em 1em;
 	}
 
 	header .home-link {
@@ -711,8 +726,8 @@ footer {
 		float: none;
 	}
 
-	header nav a {
-		margin: 0em 1em 1em 1em;
+	.container {
+		display: inline-block;
 	}
 	
 	footer {
@@ -737,11 +752,58 @@ footer {
 		margin: 0px;
 		min-width: 119px;
 	}
+
+	#contact-popup-main {
+		left: 0;
+		width: 100%;
+	}
 	
+	.projects .content {
+		padding: 0% 6%;
+	}
+
+	.projects nav {
+		font-size: 1.1em;
+	}
 }
 
+@media (min-height: 800px) {
+
+	#contact-popup-main span {
+		margin: 40px 0px;
+	}
+
+}
+
+
 @media (max-height: 550px) {
+	
+	body {
+		font-size: 0.7em;
+	}
+
 	footer {
 		display: none;
+	}
+
+	.resume nav {
+		height: 69px;
+	}
+
+	#contact-popup-main {
+		top: 0;
+	}
+
+	#contact-popup-main div {
+		padding: 10px 5px;
+		/*font-size: 1.6em;*/
+	}
+
+}
+
+@media (max-height: 550px) and (min-width: 500px) {
+
+	#contact-popup-main div {
+		padding: 10px 100px;
 	}
 }
