@@ -17,12 +17,16 @@ $(document).ready(function(){
 			headerFooterHeight = 217;
 			resumeNavHeight = 99;
 		} else if (viewportWidth >= 585 && viewportWidth < 862) {
-			headerFooterHeight = 254;
+			headerFooterHeight = 179;
 			resumeNavHeight = 76;
 		} else {
 			headerFooterHeight = 233;
 			resumeNavHeight = 76;
 		} 
+
+		if (viewportHeight < 550 ) {
+			headerFooterHeight -= 81;
+		}
 
 		var contentHeight = viewportHeight - headerFooterHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
@@ -35,8 +39,6 @@ $(document).ready(function(){
 	$(window).resize(function() {
 		sizing();
 		sectionPositioning();
-		
-
 	});	
 
 
@@ -116,6 +118,7 @@ $(document).ready(function(){
 			$('#main-content').slideDown(function() {sizing();});
 		}, 1500);
 		
+
 	}	
 
 	function introRoll() {

@@ -155,6 +155,7 @@ header nav a:hover {
 	padding: 10px 25px;
 	font-weight: bold;
 	margin: 2px;
+	margin: 0px;
 	display: inline-block;
 	font-size: 1.4em;
 	border: 2px solid darkred;
@@ -328,11 +329,6 @@ Resume
 	padding: 0em 0.25em;
 	width: 12%;
 	min-width: 149px;
-}
-
-.resume section {
-	/*min-height: 62.8vh;*/
-	/*margin-bottom: 5%;*/
 }
 
 .page h2 {
@@ -597,7 +593,8 @@ footer {
 @media (min-width: 1200px) {
 	
 	.content {
-		padding: 0px 282px;
+		/*padding: 0px 282px;*/
+		padding: 0% 22%;
 	}
 
 	.resume nav {
@@ -619,7 +616,7 @@ footer {
 @media (min-width: 863px) and (max-width: 1199px) {
 
 	.content {
-		padding: 0px 197px;
+		padding: 0% 15%;
 	}
 
 	.resume nav a {
@@ -632,36 +629,37 @@ footer {
 @media (min-width: 585px) and (max-width: 862px) {
 
 	header {
-		height: 177px;
-		padding: 0px;
+		height: 98px;
+		padding: 14px;
 		text-align: center;
+		font-size: 0.7em;
 	}
 	
-	.container {
+/*	.container {
 		display: inline-block;
 	}
-
+*/
 	header nav {
-		margin-top: 0px;
+		margin-top: 6px;
 	}
 
-	header .home-link {
+/*	header .home-link {
 		display: block;
 		float: none;
-		/*margin-left: 16px;*/
 	}
 
 	.contact-link {
 		display: block;
-	}
+	}*/
 
 	header nav a {
-		margin: 0em 1em 0.5em 1em;
+		margin: 0em 1em;
 	}
 
 	.content {
 		/*height: 67.9vh;*/
-		padding: 0px 86px;
+		/*padding: 0px 86px;*/
+		padding: 0% 11%;
 		/*height: 79.9;*/
 	}
 
@@ -739,33 +737,11 @@ footer {
 		margin: 0px;
 		min-width: 119px;
 	}
-
-/*	footer {
-		height: 9vh;
-	}*/
-
-/*	footer {
-		display: none;
-	}*/
-
-/*	.resume .content {
-		height: 62.8vh;
-	}
-
-	.resume nav {
-		height: 12.1vh;
-	}
-
-	.projects .content {
-		
-	}
-
-	.projects nav {
-		
-	}
-
-	.contact-popup {
-		
-	}*/
 	
+}
+
+@media (max-height: 550px) {
+	footer {
+		display: none;
+	}
 }
