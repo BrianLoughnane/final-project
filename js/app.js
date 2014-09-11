@@ -4,6 +4,7 @@ $(document).ready(function(){
 		console.log('scroll');
 	});
 
+
 // ================================
 // Sizing
 // ================================
@@ -11,29 +12,17 @@ $(document).ready(function(){
 	function sizing() {
 		var viewportWidth = $(window).width();
 		var viewportHeight = $(window).height();
-		var headerFooterHeight;		
-		var resumeNavHeight;
+		var headerHeight = $('header').outerHeight();
+		var resumeNavHeight = $('.resume nav').outerHeight();
+		var footerHeight;
 
-		if (viewportWidth >= 1200 ) {
-			headerFooterHeight = 217;
-			resumeNavHeight = 109;
-		} else if (viewportWidth >= 862 && viewportHeight < 1200) {
-			headerFooterHeight = 217;
-			resumeNavHeight = 99;
-		} else if (viewportWidth >= 585 && viewportWidth < 862) {
-			headerFooterHeight = 179;
-			resumeNavHeight = 76;
+		if ($('footer').css('display') === 'none') {
+			footerHeight = 0;
 		} else {
-			headerFooterHeight = 233;
-			resumeNavHeight = 76;
-		} 
-
-		if (viewportHeight < 550 ) {
-			headerFooterHeight -= 161;
-			resumeNavHeight -= 69;
+			footerHeight = $('footer').outerHeight();
 		}
 
-		var contentHeight = viewportHeight - headerFooterHeight;
+		var contentHeight = viewportHeight - headerHeight - footerHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
 
 		$('#content-container').css('height', contentHeight);
@@ -46,7 +35,6 @@ $(document).ready(function(){
 		sizing();
 		sectionPositioning();
 	});	
-
 
 // ================================
 // Intro
@@ -302,11 +290,11 @@ $(document).ready(function(){
 
 	function sectionPositioning() {
 		if($('#purpose').position() !== undefined) {
+			$('.content').scrollTop(0);
 			resumeSectionPositioning();
-			console.log('resume positioning fired');
 		} else if ($('#featured').position() !== undefined) {
+			$('.content').scrollTop(0);
 			projectSectionPositioning();
-			console.log('projects positioning fired');
 		}
 	}
 
@@ -319,6 +307,7 @@ $(document).ready(function(){
 		experienceLocation = $('#experience').position().top;
 		educationLocation = $('#education').position().top;
 		languagesLocation = $('#languages').position().top;
+		console.log('resumeSectionPositioning');
 	}
 
 	function resumeSetup() {

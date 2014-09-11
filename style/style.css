@@ -654,7 +654,7 @@ footer {
 
 	header {
 		height: 98px;
-		padding: 14px;
+		padding: 14px 39px;
 		text-align: center;
 		font-size: 0.7em;
 	}
@@ -773,10 +773,32 @@ footer {
 
 @media (max-height: 700px) {
 
+/*	header {
+		padding: 14px 57px;
+		height: 90px
+	}
+
+	.resume nav {
+		padding: 10px 0px;
+		height: 65px;
+	}*/
+
 	.projects nav span {
 		margin: 20px 0px;
 	}
+}
 
+@media (max-height: 700px) and (min-width: 550px){
+
+	header {
+		padding: 14px 57px;
+		height: 90px
+	}
+
+	.resume nav {
+		padding: 10px 0px;
+		height: 65px;
+	}
 }
 
 @media (max-height: 550px) {
