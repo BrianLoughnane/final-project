@@ -136,7 +136,7 @@ header nav {
 }
 
 header nav a {
-	margin-right: 3em;
+	margin-right: 2em;
 	font-size: 1.4em;
 	padding: 0em 0.281em;
 	margin-bottom: 2px;
@@ -148,8 +148,8 @@ header nav a:hover {
 }
 
 .home-link {
-	float: left;
 	margin-top: 6px;
+	float: left;
 }
 
 .contact-link {
@@ -185,9 +185,9 @@ header .current-nav-link {
 	padding: 0em 0.281em;
 }
 
-.margin-fix {
+/*.margin-fix {
 	margin-right: 2.719em;
-}
+}*/
 
 .contact-link-selected {
 	color: darkred;
@@ -198,39 +198,48 @@ header .current-nav-link {
 Footer
 ========================*/
 
-footer {
-	width: 100%;
-	border-top: 2px solid darkslategray;
-	padding: 20px 0px;
-	position: static;
-	background: transparent;
-	font-size: 0.7em;
-}
+	footer {
+		width: 100%;
+		border-top: 2px solid darkslategray;
+		padding: 20px 0px 30px 0px;
+		position: static;
+		background: transparent;
+		font-size: 0.7em;
+		text-align: center;
+	}
 
-footer span.home-link {
-	display: inline-block;
-	font-size: 1.3em;
-	font-weight: 300;
-	margin-top: 0px;
-	color: darkred;
-}
+	footer span.home-link {
+		font-size: 1.3em;
+		font-weight: 300;
+		margin-top: 0px;
+		color: darkred;
+		display: block;
+	}
 
-footer span.home-link strong {
-	color: darkslategray;
-}
+	footer span.home-link strong {
+		color: darkslategray;
+	}
 
-footer nav {
-	display: inline-block;
-	float: right;
-	margin-top: 2px;
-}
+	footer nav {
+		margin-top: 2px;
+		display: block;
+		text-align: center;
+	}
 
-footer a.resume-link, footer a.projects-link {
-	margin-left: 2em;
-	font-size: 1.1em;
-	font-weight: 100;
-	vertical-align: top;
-}
+	footer nav a {
+			margin: 0em 1em 1em 1em;
+	}
+
+	footer a.resume-link, footer a.projects-link {
+		margin-left: 2em;
+		font-size: 1.1em;
+		font-weight: 100;
+		vertical-align: top;
+	}
+
+	header a.resume-link, header a.projects-link {
+		text-align: center;
+	}
 
 /*========================
 Main Content
@@ -577,12 +586,12 @@ Contact Popup
 
 #contact-popup-main a {
 	display: block;
-	text-decoration: underline;
 } 
 
 /*========================
 Responsive Design
 ========================*/
+
 
 @media (min-width: 1200px) {
 	
@@ -627,7 +636,7 @@ Responsive Design
 	}
 
 	header nav a {
-		margin: 0em 1em;
+		margin-right: 2em;
 	}
 
 	.content {
