@@ -118,7 +118,7 @@ $(document).ready(function(){
 	}
 
 	function blink() {
-		$(".blackout").fadeIn(1000).fadeOut(1000);
+		$("#main-blackout").fadeIn(1000).fadeOut(1000);
 	}
 
 	function blowUp(elem) {
@@ -211,9 +211,9 @@ $(document).ready(function(){
 // Intro
 // ================================
 	$('#main-blackout').fadeOut(1000); 
-	// playBaliRain();
-	// introRoll();
-	setup();
+	playBaliRain();
+	introRoll();
+	// setup();
 
 
 
