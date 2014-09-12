@@ -13,7 +13,7 @@
 	<script src="js/app.js"></script>
 	<!-- <script src="js/sendgrid.js"></script>	 -->
 	<style>
-		#blackout, .intro {
+		.intro {
 			display: none;
 		}
 
@@ -26,6 +26,7 @@
 <body>
 	<div id="contact-popup">
 		<div id="contact-popup-main">
+			<div class="blackout" id="contact-blackout"></div>
 			<i class="contact-close">×</i>
 			<div>
 				<span>
@@ -43,7 +44,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="blackout"></div>
+	<div class="blackout" id="main-blackout"></div>
 	<div class="intro" id="introFades">
 		<!-- <span>When you look at your watch</span>
 		<span>is it time that you see?</span>

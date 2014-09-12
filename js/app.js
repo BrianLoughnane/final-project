@@ -14,19 +14,8 @@ $(document).ready(function(){
 		var viewportHeight = $(window).height();
 		var headerHeight = $('header').outerHeight();
 		var resumeNavHeight = $('.resume nav').outerHeight();
-		var footerHeight;
 
-		if ($('footer').css('display') === 'none') {
-			footerHeight = 0;
-		} else {
-			footerHeight = $('footer').outerHeight();
-		}
-
-		// testing
-		footerHeight = 0;
-		// end test
-
-		var contentHeight = viewportHeight - headerHeight - footerHeight;
+		var contentHeight = viewportHeight - headerHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
 
 		$('#content-container').css('height', contentHeight);
@@ -66,7 +55,7 @@ $(document).ready(function(){
 	}
 
 	function blink() {
-		$("#blackout").fadeIn(1000).fadeOut(1000);
+		$(".blackout").fadeIn(1000).fadeOut(1000);
 	}
 
 	function blowUp(elem) {
@@ -158,7 +147,7 @@ $(document).ready(function(){
 // ================================
 // Intro
 // ================================
-	$('#blackout').fadeOut(1000); 
+	$('#main-blackout').fadeOut(1000); 
 	// playBaliRain();
 	// introRoll();
 	setup();
@@ -191,7 +180,7 @@ $(document).ready(function(){
 		linkStyleClear();
 	});
 
-	$('.resume-link').on("click", function(e) {
+	$(document).on("click", '.resume-link', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -217,7 +206,7 @@ $(document).ready(function(){
 		$('#main-resume-link').addClass('current-nav-link');
 	});
 
-	$('.projects-link').on("click", function(e) {
+	$(document).on("click", '.projects-link', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
@@ -270,7 +259,9 @@ $(document).ready(function(){
 
 		$('#contact-popup')
 		.css('z-index', 100)
-		.animate({'opacity': 1}, 400);
+		.animate({'opacity': 1}, 400, function() {
+			$('#contact-blackout').fadeOut(400); 
+		});
 
 	});
 
@@ -278,8 +269,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 
-		$('#contact-popup')
-		.animate({'z-index': -1, 'opacity': 0}, 400);
+		$('#contact-blackout').fadeIn(400, function() {
+			$('#contact-popup')
+			.animate({'z-index': -1, 'opacity': 0}, 400);
+		});
+		
 
 	});
 
