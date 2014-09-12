@@ -56,7 +56,7 @@ ul {
 }
 
 .gutter {
-	height: 610px;
+	height: 280px;
 }
 
 /*========================
@@ -117,7 +117,6 @@ header span {
 	display: inline-block;
 	font-size: 2em;
 	font-weight: 300;
-/*	margin-top: 10px;*/
 	color: darkred;
 }
 
@@ -126,11 +125,7 @@ header span strong {
 }
 
 header nav {
-	/*display: inline-block;*/
 	float: right;
-	/*vertical-align: top;*/
-	/*margin-top: 20px;*/
-	/*margin-top: 7px;*/
 	min-width: 202px;
 }
 
@@ -155,14 +150,11 @@ header nav a:hover {
 	text-decoration: none;
 	padding: 10px 25px;
 	font-weight: bold;
-	margin: 2px;
 	margin: 0px;
 	display: inline-block;
 	font-size: 1.4em;
 	border: 2px solid darkred;
 	color: darkred;
-	/*width: 245px;*/
-
 }
 
 .contact-link:hover {
@@ -202,11 +194,12 @@ Footer
 
 footer {
 	width: 100%;
-	position: fixed;
-	bottom: 0;
 	border-top: 2px solid darkred;
 	padding: 20px 57px;
-	background: rgb(250, 250, 250);
+	position: static;
+	background: transparent;
+	font-size: 0.7em;
+
 }
 
 footer span {
@@ -227,13 +220,21 @@ footer nav {
 	margin-top: 8px;
 }
 
-footer nav a {
+footer a.resume-link, footer a.projects-link {
 	margin-left: 2em;
 	font-size: 1.1em;
+	font-weight: 100;
 }
 
-footer nav a:hover {
+footer a.resume-link:hover, footer a.projects-link:hover {
 	margin-left: 1.45em;
+	font-weight: bold;
+	text-decoration: none;
+	-webkit-transition-duration: initial;
+	-moz-transition-duration: initial;
+	-ms-transition-duration: initial;
+	-o-transition-duration: initial;
+	transition-duration: initial;
 }
 
 /*========================
@@ -252,7 +253,6 @@ Main Content
 .content {
 	font-size: 2em;
 	overflow-y: scroll;
-	height: 1000px;
 	padding: 0px 282px;
 	color: darkred;
 	position: relative;
@@ -274,7 +274,6 @@ Main Content
 }
 
 .content blockquote {
-	/*color: darkgray;*/
 	color: rgb(53, 32, 32);
 }
 
@@ -404,10 +403,6 @@ Projects
 	font-size: 1.9em;
 	text-align: center;
 	color: cadetblue;
-	/*position: relative;
-	top: 17%;
-	left: 5.2%;
-	width: 125px;*/
 	width: 20%;
 	padding-top: 30px;
 }
@@ -419,7 +414,6 @@ Projects
 
 .projects nav a {
 	display: inline-block;
-	/*margin-bottom: 0em;*/
 }
 
 .current-nav-link-p {
@@ -532,7 +526,6 @@ Contact Popup
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgba(58,78,117,0.7);
 	background: rgba(8, 19, 39, 0.7);
 	z-index: -1;
 	opacity: 0;
@@ -543,14 +536,9 @@ Contact Popup
 #contact-popup-main {
 	position: relative;
 	top: 16vh;
-	/*left: 25%;*/
-	/*width: 50%;*/
-	/*height: 70%;*/
-	border: 4px solid darkred;
 	border: 4px solid rgb(45, 46, 46);
 	color: darkred;
 	background: rgba(255,255,255, 1);
-	/*min-height: 528px;*/
 	display: inline-block;
 }
 
@@ -572,13 +560,6 @@ Contact Popup
 
 #contact-popup-main div {
 	font-size: 2em;
-	/*width: 100%;*/
-	/*height: 100%;*/
-	/*padding: 16% 0%;*/
-	/*padding: 101px 69px;*/
-	padding: 101px 11%;
-	padding: 30px 150px;
-	/*text-align: left;*/
 }
 
 #contact-popup-main span {
@@ -588,14 +569,10 @@ Contact Popup
 
 #contact-popup-main strong {
 	color: darkslategray;
-	/*float: left;*/
-	/*text-decoration: overline;*/
 	font-style: italic;
 } 
 
 #contact-popup-main a {
-	/*float: left;*/
-	/*clear: both;*/
 	display: block;
 	text-decoration: underline;
 } 
@@ -604,27 +581,10 @@ Contact Popup
 Responsive Design
 ========================*/
 
-header {
-	/*height: 136px;*/
-}
-
-footer {
-	/*height: 81px;*/
-}
-
-.resume nav {
-	/*height: 99px;*/
-}
-
 @media (min-width: 1200px) {
 	
 	.content {
-		/*padding: 0px 282px;*/
 		padding: 0% 22%;
-	}
-
-	.resume nav {
-		/*height: 109px;*/
 	}
 
 }
@@ -654,15 +614,14 @@ footer {
 @media (min-width: 585px) and (max-width: 862px) {
 
 	header {
-		/*height: 98px;*/
 		padding: 14px 39px;
 		text-align: center;
 		font-size: 0.7em;
 	}
 
-/*	header nav {
-		margin-top: 6px;
-	}*/
+	footer {
+		font-size: 0.4em;
+	}
 
 	header nav a {
 		margin: 0em 1em;
@@ -688,29 +647,34 @@ footer {
 	}
 }
 
+@media (min-width: 585px) {
+	#contact-popup-main {
+		width: 75%;
+	}	
+}
+
 @media (max-width: 584px) {
 	
 	body {
 		font-size: 0.7em;
 	}
 
-	header {
-		/*height: 152px;*/
+	header, footer {
 		text-align: center;
 		padding: 10px 0px;
 	}
 
-	header nav {
+	header nav, footer nav {
 		display: block;
 		text-align: center;
 		float: none;
 	}
 
-	header nav a {
+	header nav a, footer nav a {
 		margin: 0em 1em 1em 1em;
 	}
 
-	header .home-link {
+	header .home-link, footer .home-link {
 		display: block;
 		float: none;
 	}
@@ -718,7 +682,6 @@ footer {
 	.contact-link {
 		display: block;
 		width: 99%;
-		/*width: 240px;*/
 		font-size: 1.3em;
 		float: none;
 	}
@@ -729,15 +692,14 @@ footer {
 	
 	footer {
 		padding: 20px 24px;
+		font-size: 0.6em;
 	}
 
 	.content {
-		/*height: 79.9vh;*/
 		padding: 0px 10%;
 	}
 
 	.resume nav {
-		/*height: 76px;*/
 		padding: 15px;
 	}
 
@@ -774,32 +736,20 @@ footer {
 
 @media (max-height: 700px) {
 
-/*	header {
-		padding: 14px 57px;
-		height: 90px
-	}
-
-	.resume nav {
-		padding: 10px 0px;
-		height: 65px;
-	}*/
-
 	.projects nav span {
 		margin: 20px 0px;
 	}
 }
 
-/*@media (max-height: 700px) and (min-width: 585px){*/
+
 @media (max-height: 700px) and (min-width: 550px) {
 
 	header {
 		padding: 14px 40px;
-		/*height: 90px*/
 	}
 
 	.resume nav {
 		padding: 10px 0px;
-		/*height: 65px;*/
 	}
 }
 
@@ -809,17 +759,12 @@ footer {
 		font-size: 0.7em;
 	}
 
-	footer {
-		display: none;
-	}
-
 	#contact-popup-main {
 		top: 0;
 	}
 
 	#contact-popup-main div {
 		padding: 10px 5px;
-		/*font-size: 1.6em;*/
 	}
 
 }
@@ -838,21 +783,11 @@ footer {
 
 @media (max-height: 550px) and (min-width: 585px) {
 
-	#contact-popup-main div {
-		padding: 10px 100px;
-	}
-
 	header {
 		padding:  4px 57px;
-		/*height: 56px;*/
 	}
-
-/*	header nav {
-		margin-top: 0px;
-	}*/
 
 	.resume nav {
 		padding: 5px;
-		/*height: 36px;*/
 	}
 }

@@ -22,6 +22,10 @@ $(document).ready(function(){
 			footerHeight = $('footer').outerHeight();
 		}
 
+		// testing
+		footerHeight = 0;
+		// end test
+
 		var contentHeight = viewportHeight - headerHeight - footerHeight;
 		var resumeContentHeight = contentHeight - resumeNavHeight;
 
